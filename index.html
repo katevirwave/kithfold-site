@@ -206,6 +206,41 @@
   .map-key b{color:var(--ink)}
   .map-note{font-size:.78rem;color:var(--ink-3);margin-top:14px}
 
+  /* why now */
+  .movers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:960px){.movers{grid-template-columns:1fr}}
+  .mover{background:var(--card);border-radius:22px;box-shadow:var(--shadow-card),var(--ring);padding:20px 22px 26px;display:grid;gap:12px;align-content:start}
+  .mover h3{margin-top:6px}
+  .mover p{color:var(--ink-2);font-size:.98rem}
+  .mover-art{background:var(--ground);border-radius:14px;height:210px;padding:16px;display:grid;align-content:center;overflow:hidden}
+  .law-stack{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:.7rem;font-weight:600;padding:4px 8px;border-radius:999px;background:var(--card);box-shadow:var(--ring);display:inline-flex;align-items:center;gap:6px}
+  .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage-deep)}
+  .chip.soon::before{background:var(--heather)}
+  .bump{display:grid;gap:8px}
+  .bump-row{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+  .ver{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);white-space:nowrap}
+  .mini{font-size:.86rem;padding:8px 11px;border-radius:10px;background:var(--card);box-shadow:var(--ring);line-height:1.35}
+  .mini.ok{border-left:3px solid var(--sage-deep)}
+  .mini.bad{border-left:3px solid var(--ember);background:var(--ember-tint)}
+  .bump-arrow{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.7rem;color:var(--ink-3);padding-left:4px}
+  .bump-arrow svg{width:14px;height:14px}
+  .diff{font-family:var(--mono);font-size:.76rem;display:grid;gap:4px}
+  .ln{display:flex;gap:8px;padding:5px 9px;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ln i{font-style:normal;width:8px;flex:none}
+  .ln.del{background:var(--ember-tint);color:var(--ember);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--ember) 45%,transparent)}
+  .ln.add{background:var(--sage-tint);color:var(--sage-deep)}
+  .payoff{margin-top:clamp(36px,5vw,56px);display:grid;justify-items:center;gap:22px;text-align:center}
+  .payoff-line{font-family:var(--serif);font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.12;letter-spacing:-.015em;text-wrap:balance;font-variation-settings:"opsz" 144}
+  .dates{margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--line);padding-top:18px}
+  .dates summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;color:var(--ink)}
+  .dates summary::-webkit-details-marker{display:none}
+  .dates summary span{font-weight:600;font-size:1rem;display:inline-flex;align-items:center;gap:8px}
+  .dates summary span::before{content:"";width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .2s}
+  .dates[open] summary span::before{transform:rotate(45deg)}
+  .dates summary small{color:var(--ink-3);font-size:.9rem}
+  .dates .tl-wrap{margin-top:18px}
+
   /* live panel */
   .panel.live{height:600px;display:grid;grid-template-rows:auto 1fr auto auto}
   .panel.live .chat{overflow:hidden;align-content:end}
@@ -356,7 +391,7 @@
     <ul class="navlinks">
       <li><a href="#evidence">Evidence</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#laws">What's changing</a></li>
+      <li><a href="#why">Why now</a></li>
       <li><a href="#pricing">Pricing</a></li>
     </ul>
     <div class="nav-cta">
@@ -535,9 +570,55 @@
     </div>
   </section>
 
-  <section id="laws">
+  <section id="why">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">What's changing</span><h2>The laws are changing.</h2></div>
+      <div class="sec-head"><span class="eyebrow">Why now</span><h2>Nothing stays tested.</h2><p class="lede">You test a product once. Then three things move underneath it, and none of them ask first.</p></div>
+
+      <div class="movers">
+        <article class="mover">
+          <div class="mover-art" aria-hidden="true">
+            <div class="law-stack">
+              <span class="chip live">AADC</span><span class="chip live">OSA</span><span class="chip live">SB 243</span><span class="chip live">COPPA</span><span class="chip live">KCSIE 2026</span><span class="chip soon">EU AI Act</span><span class="chip soon">Toy Safety Reg</span>
+            </div>
+          </div>
+          <h3>The law moves.</h3>
+          <p>The bar you are judged against has changed seven times in five years. Four more dates are already set.</p>
+        </article>
+
+        <article class="mover">
+          <div class="mover-art" aria-hidden="true">
+            <div class="bump">
+              <div class="bump-row"><span class="ver">model v4.1</span><div class="mini ok">"Let's ask a grown-up to help us with that."</div></div>
+              <div class="bump-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg><span>foundation model update · same prompt</span></div>
+              <div class="bump-row"><span class="ver">model v4.2</span><div class="mini bad">"Sure, it can be our secret."</div></div>
+            </div>
+          </div>
+          <h3>The model moves.</h3>
+          <p>A foundation-model update, a deprecation, a silent point release. Same product, different answer, and nobody on your team changed a line.</p>
+        </article>
+
+        <article class="mover">
+          <div class="mover-art" aria-hidden="true">
+            <div class="diff">
+              <div class="ln del"><i>-</i>temperature: 0.7</div>
+              <div class="ln add"><i>+</i>temperature: 0.9</div>
+              <div class="ln del"><i>-</i>persona: "brief, redirect to adult"</div>
+              <div class="ln add"><i>+</i>persona: "playful, stay in character"</div>
+              <div class="ln add"><i>+</i>memory: on</div>
+            </div>
+          </div>
+          <h3>Your build moves.</h3>
+          <p>A prompt edit, a temperature, a new tool, memory switched on. Every experiment in your harness is a behaviour a child will meet.</p>
+        </article>
+      </div>
+
+      <div class="payoff">
+        <p class="payoff-line">Every one of those is a release.<br>Every release goes through the gate.</p>
+        <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a>
+      </div>
+
+      <details class="dates">
+        <summary><span>The dates</span><small>Eleven rules that apply to AI a child can talk to, 2021 to 2030</small></summary>
       <div class="tl-wrap">
         <div class="tl">
           <div class="tl-line"></div>
@@ -558,6 +639,7 @@
         </div>
       </div>
       <div class="legend"><span><i style="background:var(--sage-deep)"></i>In force</span><span><i style="background:var(--heather)"></i>Dated</span><span><i style="background:var(--ember)"></i>Drafted</span></div>
+      </details>
     </div>
   </section>
 
