@@ -10,6 +10,8 @@
 <meta property="og:url" content="https://kithfold.ai/">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://kithfold.ai/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -205,7 +207,10 @@
   .map-note{font-size:.78rem;color:var(--ink-3);margin-top:14px}
 
   /* live panel */
-  .panel.live{min-height:420px;display:grid;grid-template-rows:auto 1fr auto auto}
+  .panel.live{height:600px;display:grid;grid-template-rows:auto 1fr auto auto}
+  .panel.live .chat{overflow:hidden;align-content:end}
+  .panel.live .finding{min-height:132px;align-content:start}
+  @media (max-width:900px){.panel.live{height:auto;min-height:520px}}
   .dots{display:inline-flex;gap:5px}
   .dots i{width:10px;height:10px;border-radius:50%;display:inline-block;background:#E4685A}.dots i:nth-child(2){background:#E8B84A}.dots i:nth-child(3){background:#7FA58A}
   .msg{transition:opacity .35s ease,transform .35s ease}
@@ -666,5 +671,3 @@
   setTimeout(play,1400);
 })();
 </script>
-</body>
-</html>
