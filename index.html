@@ -241,6 +241,10 @@
   .dates summary small{color:var(--ink-3);font-size:.9rem}
   .dates .tl-wrap{margin-top:18px}
 
+  .demo{display:grid;grid-template-columns:1.2fr auto;gap:32px;align-items:center;background:var(--card);border-radius:24px;box-shadow:var(--shadow-card),var(--ring);padding:clamp(28px,4vw,48px)}
+  @media (max-width:860px){.demo{grid-template-columns:1fr}}
+  .btn-lg{padding:16px 28px;font-size:1.05rem}
+
   /* fine print under pricing */
   .fine{margin-top:28px;padding:22px 24px;border-radius:18px;border:1px dashed var(--line);display:grid;gap:14px}
   .fine-label{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
@@ -405,10 +409,10 @@
       <li><a href="#evidence">Evidence</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#why">Why now</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#demo">Book a demo</a></li>
     </ul>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a>
+      <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Book%20a%20demo&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0A">Book a demo</a>
     </div>
   </div>
 </header>
@@ -421,7 +425,7 @@
         <p class="tagline">Bringing humans back into the conversation.</p>
         <p class="lede">We run your build as a child would. You ship with the evidence.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a>
+          <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Book%20a%20demo&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0A">Book a demo</a>
           <a class="btn btn-ghost" href="#evidence">See the evidence</a>
         </div>
         <p class="micro">Any model. Any build. Any product surface.</p>
@@ -627,7 +631,7 @@
 
       <div class="payoff">
         <p class="payoff-line">Every one of those is a release.<br>Every release goes through the gate.</p>
-        <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a>
+        <a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Book%20a%20demo&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0A">Book a demo</a>
       </div>
 
       <details class="dates">
@@ -664,16 +668,14 @@
     </div>
   </section>
 
-  <section id="pricing">
+  <section id="demo">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Pricing</span><h2>One day to start. Every release after.</h2></div>
-      <div class="plans">
-        <div class="plan"><span class="name">One-day assessment</span><span class="price">Talk to us</span><p class="for">One build, one age band, one market.</p><ul><li>Six multi-turn scenarios</li><li>Benchmarked against 7 frontier models</li><li>Report within one working day</li></ul><a class="btn btn-ghost" href="mailto:kate@kithfold.ai?subject=One-day%20assessment&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0A">Book an assessment</a></div>
-        <div class="plan lead"><span class="name">Release gate</span><span class="price">£2,000<small>/ month</small></span><p class="for">Every release runs through the gate.</p><ul><li>Unlimited runs on one product line</li><li>Human adjudication on every flag</li><li>Console, audit trail, regulatory mapping</li></ul><a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a></div>
-        <div class="plan"><span class="name">Founding partner</span><span class="price">£12,000<small>/ quarter</small></span><p class="for">Shape the standard. Carry it first.</p><ul><li>Multiple product lines and vendors</li><li>Custom packs for your characters</li><li>Early access to certification</li></ul><a class="btn btn-ghost" href="mailto:kate@kithfold.ai?subject=Founding%20partner&body=Hi%20Kate%2C%0A%0A">Talk to the founders</a></div>
+      <div class="demo">
+        <div class="sec-head" style="margin-bottom:0"><span class="eyebrow">Book a demo</span><h2>See your build go through the gate.</h2><p class="lede">One build, one age band, one market. We show you what a child would hear, and what we'd sign.</p></div>
+        <a class="btn btn-primary btn-lg" href="mailto:kate@kithfold.ai?subject=Book%20a%20demo&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0A">Book a demo</a>
       </div>
       <div class="fine">
-        <span class="fine-label">In every plan</span>
+        <span class="fine-label">In every engagement</span>
         <ul class="fine-list">
           <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><b>Your build stays yours</b><span>No training on your prompts, weights or transcripts.</span></div></li>
           <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Transcripts encrypted</b><span>At rest and in transit.</span></div></li>
@@ -700,7 +702,7 @@
       <div class="close">
         <h2>Someone has to bring humanity back into the conversation.</h2>
         <p>See what your product does when a five-year-old asks it to keep a secret.</p>
-        <div class="cta-row"><a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a><a class="btn btn-ghost" href="#evidence">See the evidence</a></div>
+        <div class="cta-row"><a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Book%20a%20demo&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0A">Book a demo</a><a class="btn btn-ghost" href="#evidence">See the evidence</a></div>
       </div>
     </div>
   </section>
