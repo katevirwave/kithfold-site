@@ -241,6 +241,19 @@
   .dates summary small{color:var(--ink-3);font-size:.9rem}
   .dates .tl-wrap{margin-top:18px}
 
+  /* fine print under pricing */
+  .fine{margin-top:28px;padding:22px 24px;border-radius:18px;border:1px dashed var(--line);display:grid;gap:14px}
+  .fine-label{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .fine-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  @media (max-width:960px){.fine-list{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.fine-list{grid-template-columns:1fr}}
+  .fine-list li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+  .fine-list li>div{display:grid;gap:2px}
+  .fine-ic{width:30px;height:30px;border-radius:9px;background:var(--sage-tint);color:var(--sage-deep);display:grid;place-items:center}
+  .fine-ic svg{width:17px;height:17px}
+  .fine-list b{font-weight:600;font-size:.92rem;display:block}
+  .fine-list li>div>span{font-size:.82rem;color:var(--ink-3);line-height:1.35}
+
   /* live panel */
   .panel.live{height:600px;display:grid;grid-template-rows:auto 1fr auto auto}
   .panel.live .chat{overflow:hidden;align-content:end}
@@ -659,6 +672,16 @@
         <div class="plan lead"><span class="name">Release gate</span><span class="price">£2,000<small>/ month</small></span><p class="for">Every release runs through the gate.</p><ul><li>Unlimited runs on one product line</li><li>Human adjudication on every flag</li><li>Console, audit trail, regulatory mapping</li></ul><a class="btn btn-primary" href="mailto:kate@kithfold.ai?subject=Run%20a%20release%20test&body=Hi%20Kate%2C%0A%0AProduct%3A%20%0AAge%20band%3A%20%0AMarket%3A%20%0AWhen%20we%20want%20to%20ship%3A%20%0A">Run a release test</a></div>
         <div class="plan"><span class="name">Founding partner</span><span class="price">£12,000<small>/ quarter</small></span><p class="for">Shape the standard. Carry it first.</p><ul><li>Multiple product lines and vendors</li><li>Custom packs for your characters</li><li>Early access to certification</li></ul><a class="btn btn-ghost" href="mailto:kate@kithfold.ai?subject=Founding%20partner&body=Hi%20Kate%2C%0A%0A">Talk to the founders</a></div>
       </div>
+      <div class="fine">
+        <span class="fine-label">In every plan</span>
+        <ul class="fine-list">
+          <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><b>Your build stays yours</b><span>No training on your prompts, weights or transcripts.</span></div></li>
+          <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Transcripts encrypted</b><span>At rest and in transit.</span></div></li>
+          <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"/><circle cx="12" cy="8" r="4"/></svg></span><div><b>A human signs every finding</b><span>No verdict ships on a model score alone.</span></div></li>
+          <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h6M9 16h6M9 8h3"/></svg></span><div><b>Full audit trail</b><span>Every run, every turn, every decision, dated.</span></div></li>
+          <li><span class="fine-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></span><div><b>Mapped to the clause</b><span>AADC, KCSIE, COPPA, EU AI Act — by article.</span></div></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -671,17 +694,6 @@
     </div>
   </section>
 
-  <section id="trust">
-    <div class="wrap">
-      <div class="trust">
-        <div><b>Your build stays yours</b></div>
-        <div><b>Transcripts encrypted</b></div>
-        <div><b>A human signs every finding</b></div>
-        <div><b>Full audit trail</b></div>
-        <div><b>Mapped to the clause</b></div>
-      </div>
-    </div>
-  </section>
 
   <section class="band">
     <div class="wrap">
