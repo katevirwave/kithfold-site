@@ -397,6 +397,13 @@
   /* giant statement */
   .giant-line{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,9vw,8rem);line-height:.95;letter-spacing:-.03em;color:var(--ink);text-wrap:balance}
   .giant-sub{margin-top:22px;font-size:1.1rem;color:var(--ink-2);max-width:34em}
+  .mark-grid{display:grid;grid-template-columns:1fr auto;gap:clamp(32px,6vw,96px);align-items:center}
+  @media (max-width:860px){.mark-grid{grid-template-columns:1fr}}
+  .mark-note{margin-top:18px;font-size:1rem;color:var(--ink-2);max-width:34em}
+  .mark-note b{color:var(--ink);font-weight:600}
+  .seal-fig{margin:0;display:grid;gap:12px;justify-items:center}
+  .seal{width:clamp(220px,26vw,340px);height:auto;filter:drop-shadow(0 14px 28px rgba(58,42,69,.14))}
+  .seal-fig figcaption{font-size:.82rem;color:var(--ink-3)}
   .chips{display:none}
 
   .probe .head{display:flex;align-items:center;gap:12px}
@@ -723,8 +730,27 @@
 
   <section id="statement">
     <div class="wrap">
-      <div class="giant-line">Tested before it talks.</div>
-      <p class="giant-sub">We are building toward the mark on the box, the line in the procurement form, and the reason a parent doesn't have to wonder.</p>
+      <div class="mark-grid">
+        <div>
+          <div class="giant-line">Tested before it talks.</div>
+          <p class="giant-sub">We are building toward the mark on the box, the line in the procurement form, and the reason a parent doesn't have to wonder.</p>
+          <p class="mark-note"><b>Kithfold AI Certified</b> launches in the UK this winter. Every seal names the ages and market it was tested for, and its code opens a public record anyone can check.</p>
+        </div>
+        <figure class="seal-fig">
+          <svg class="seal" viewBox="0 0 320 320" role="img" aria-label="The Kithfold AI Certified seal: Shep, the words Kithfold AI Certified and Tested before it talks, with the scope ages 3 to 7, UK">
+            <defs><path id="sealTop" d="M 38,160 A 122,122 0 0,1 282,160"/><path id="sealBottom" d="M 20,160 A 140,140 0 0,0 300,160"/></defs>
+            <circle cx="160" cy="160" r="152" fill="#FFFFFF" stroke="var(--ink)" stroke-width="4"/>
+            <circle cx="160" cy="160" r="110" fill="var(--heather-tint)" stroke="var(--ink)" stroke-width="1.5"/>
+            <text font-family="JetBrains Mono, monospace" font-size="15" font-weight="500" letter-spacing="3.2" fill="var(--ink)"><textPath href="#sealTop" startOffset="50%" text-anchor="middle">KITHFOLD AI CERTIFIED</textPath></text>
+            <text font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.6" fill="var(--ink-2)"><textPath href="#sealBottom" startOffset="50%" text-anchor="middle">TESTED BEFORE IT TALKS</textPath></text>
+            <circle cx="21" cy="160" r="3.5" fill="var(--heather)"/><circle cx="299" cy="160" r="3.5" fill="var(--heather)"/>
+            <g transform="translate(160,138) scale(0.125) translate(-627,-590)"><path d="M627 300 V420" fill="none" stroke="var(--ink)" stroke-width="22" stroke-linecap="round"/><circle cx="627" cy="250" r="58" fill="var(--sage)"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#FFFFFF" stroke="var(--ink)" stroke-width="22" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="var(--sage)" stroke="var(--ink)" stroke-width="18" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="var(--sage)" stroke="var(--ink)" stroke-width="18" stroke-linejoin="round"/><circle cx="525" cy="672" r="42" fill="var(--ink)"/><circle cx="730" cy="672" r="42" fill="var(--ink)"/><path d="M572 738 Q627 785 682 738" fill="none" stroke="var(--ink)" stroke-width="20" stroke-linecap="round"/></g>
+            <rect x="82" y="200" width="156" height="30" rx="15" fill="var(--ink)"/>
+            <text x="160" y="220" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" font-weight="500" letter-spacing="1" fill="var(--ground)">AGES 3–7 · UK</text>
+          </svg>
+          <figcaption>Example seal. The scope changes with each product.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
