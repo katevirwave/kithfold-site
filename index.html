@@ -277,6 +277,10 @@
   .demo{display:grid;grid-template-columns:1.2fr auto;gap:32px;align-items:center;background:var(--card);border-radius:24px;box-shadow:var(--shadow-card),var(--ring);padding:clamp(28px,4vw,48px)}
   @media (max-width:860px){.demo{grid-template-columns:1fr}}
   .btn-lg{padding:16px 28px;font-size:1.05rem}
+  .laws-link{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);text-decoration:none;box-shadow:var(--shadow-card);transition:border-color .15s ease,background .15s ease}
+  .laws-link:hover{border-color:var(--heather);background:var(--heather-tint)}
+  .laws-link b{font-weight:600}
+  .laws-link .arrow{font-size:1.4rem;color:var(--heather-deep);flex:none}
 
   /* fine print under pricing */
   .fine{margin-top:28px;padding:22px 24px;border-radius:18px;border:1px dashed var(--line);display:grid;gap:14px}
@@ -451,6 +455,7 @@
       <li><a href="#how">How it works</a></li>
       <li><a href="#shep">Meet Shep</a></li>
       <li><a href="#why">Why now</a></li>
+      <li><a href="laws/">Which laws apply?</a></li>
       <li><a href="#demo">Book a demo</a></li>
     </ul>
     <div class="nav-cta">
@@ -724,6 +729,7 @@
       </div>
       <div class="legend"><span><i style="background:var(--sage-deep)"></i>In force</span><span><i style="background:var(--heather)"></i>Dated</span><span><i style="background:var(--ember)"></i>Drafted</span></div>
       </details>
+      <a class="laws-link" href="laws/"><span><b>Which of these apply to your product?</b> Answer five questions and see the laws and standards that cover its AI, with the dates.</span><span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
 

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Which laws apply to my AI product for children? · Kithfold AI</title>
+<meta name="description" content="Answer five questions about your product and see which laws and standards are likely to cover its AI, what each asks of you, and the key dates.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kithfold.ai/laws/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Which laws apply to my AI product for children?">
+<meta property="og:description" content="Five questions. The laws and standards most likely to cover your product's AI, with the key dates.">
+<meta property="og:image" content="https://kithfold.ai/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: questions in a left column, live results in a wider right column; stacks on phones. Single light look by choice (Kithfold brand). */
+:root {
+  color-scheme: light;
+  --oat: #F5F1EC;        /* ground, as on kithfold.ai */
+  --panel: #FFFFFF;
+  --plum: #3A2A45;       /* ink */
+  --muted: #5A4668;
+  --faint: #6B5F76;
+  --line: #DDD5D9;
+  --heather: #7A5E86;    /* heather-deep */
+  --heather-soft: #F0E7EF;
+  --sage: #3f6e4d;       /* likely applies */
+  --sage-soft: #e6efe8;
+  --amber: #7a5700;      /* check scope */
+  --amber-soft: #f6eedb;
+  --slate: #4b5a6e;      /* buyers expect */
+  --slate-soft: #e8ecf1;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--oat); color: var(--plum); font-family: var(--body); font-size: 16px; line-height: 1.55; padding: 0 16px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 56px; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+.eyebrow { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 4.2vw, 42px); line-height: 1.12; letter-spacing: -0.02em; margin: 18px 0 10px; text-wrap: balance; max-width: 20ch; }
+.lede { color: var(--muted); max-width: 62ch; margin: 0; font-size: 16px; }
+.grid { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 32px; margin-top: 36px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+form { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 22px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); }
+@media (max-width: 860px) { form { position: static; } }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+legend { font-family: var(--display); font-weight: 600; font-size: 15px; padding: 0; margin-bottom: 8px; }
+.hint { color: var(--faint); font-size: 13px; margin: -4px 0 4px; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { position: relative; }
+.opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.opt span { display: inline-flex; align-items: center; min-height: 40px; padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--plum); background: var(--panel); transition: background .15s, border-color .15s; }
+.opt input:checked + span { background: var(--heather-soft); border-color: var(--heather); font-weight: 500; }
+.opt input:checked + span::before { content: "✓"; margin-right: 6px; color: var(--heather); font-weight: 600; }
+.opt input:focus-visible + span { outline: 2px solid var(--heather); outline-offset: 2px; }
+.example { font-size: 12.5px; color: var(--faint); border-top: 1px solid var(--line); padding-top: 14px; margin: 0; }
+
+.summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin: 0 0 18px; }
+.summary h2 { font-family: var(--display); font-weight: 400; font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+.counts { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+.counts b { font-variant-numeric: tabular-nums; color: var(--plum); }
+.group-title { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin: 26px 0 10px; }
+.group-title:first-of-type { margin-top: 0; }
+.cards { display: flex; flex-direction: column; gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; min-width: 0; }
+.card-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; justify-content: space-between; }
+.card h3 { font-family: var(--display); font-weight: 600; font-size: 17px; margin: 0; letter-spacing: -0.005em; }
+.where { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: var(--faint); text-transform: uppercase; }
+.status { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+.status.likely { color: var(--sage); background: var(--sage-soft); }
+.status.check { color: var(--amber); background: var(--amber-soft); }
+.status.expect { color: var(--slate); background: var(--slate-soft); }
+.why { margin: 10px 0 0; color: var(--muted); }
+.dates { margin: 10px 0 0; font-size: 13.5px; }
+.dates b { font-weight: 500; }
+.asks { margin: 10px 0 0; padding-left: 18px; }
+.asks li { margin: 3px 0; }
+.tests { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 13.5px; color: var(--muted); }
+.tests b { color: var(--plum); font-weight: 500; }
+.src { display: inline-block; margin-top: 8px; font-size: 13px; color: var(--heather); text-underline-offset: 3px; }
+.src:focus-visible { outline: 2px solid var(--heather); outline-offset: 2px; }
+.empty { background: var(--panel); border: 1px dashed var(--line); border-radius: 10px; padding: 22px; color: var(--muted); }
+
+.cta { margin-top: 28px; background: var(--plum); color: var(--oat); border-radius: 12px; padding: 24px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
+.cta p { margin: 0; max-width: 52ch; }
+.cta strong { font-family: var(--display); font-size: 18px; font-weight: 600; display: block; margin-bottom: 4px; }
+.cta a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 18px; border-radius: 999px; background: var(--oat); color: var(--plum); font-weight: 500; text-decoration: none; }
+.cta a:focus-visible { outline: 2px solid var(--oat); outline-offset: 3px; }
+.small { margin-top: 18px; font-size: 12.5px; color: var(--faint); max-width: 75ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.top a { text-decoration: none; }
+.back { font-size: 14px; color: var(--muted); }
+.brand { font-family: var(--body); font-weight: 600; font-size: 18px; color: var(--plum); }
+.brand span { color: var(--faint); font-weight: 400; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="../">Kithfold<span>.ai</span></a><a class="back" href="../">← Back to kithfold.ai</a></div>
+  <h1>Which laws apply to my AI product for children?</h1>
+  <p class="lede">Answer five questions about your product. You'll see the laws and standards most likely to cover its AI, what each one asks of you, and the key dates.</p>
+
+  <div class="grid">
+    <form id="finder" aria-describedby="example-note">
+      <fieldset>
+        <legend>Where are your users?</legend>
+        <p class="hint">Pick every place children use it.</p>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="where" value="UK" id="w-uk" checked><span>United Kingdom</span></label>
+          <label class="opt"><input type="checkbox" name="where" value="EU" id="w-eu"><span>European Union</span></label>
+          <label class="opt"><input type="checkbox" name="where" value="CA" id="w-ca"><span>California</span></label>
+          <label class="opt"><input type="checkbox" name="where" value="US" id="w-us"><span>Other US states</span></label>
+          <label class="opt"><input type="checkbox" name="where" value="AU" id="w-au"><span>Australia</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How old are they?</legend>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="age" value="u13" id="a-u13" checked><span>Under 13</span></label>
+          <label class="opt"><input type="checkbox" name="age" value="13-15" id="a-1315"><span>13 to 15</span></label>
+          <label class="opt"><input type="checkbox" name="age" value="16-17" id="a-1617"><span>16 to 17</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>What is it?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="kind" value="learning" id="k-learning" checked><span>Learning or tutoring tool</span></label>
+          <label class="opt"><input type="radio" name="kind" value="companion" id="k-companion"><span>AI friend or companion</span></label>
+          <label class="opt"><input type="radio" name="kind" value="toy" id="k-toy"><span>AI toy or device</span></label>
+          <label class="opt"><input type="radio" name="kind" value="game" id="k-game"><span>Game with AI characters</span></label>
+          <label class="opt"><input type="radio" name="kind" value="assistant" id="k-assistant"><span>Creative or general assistant</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Is it sold to or used in schools?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="schools" value="yes" id="s-yes" checked><span>Yes</span></label>
+          <label class="opt"><input type="radio" name="schools" value="no" id="s-no"><span>No</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Does it collect children's personal data?</legend>
+        <p class="hint">Names, voice recordings, photos, location, or chat history linked to a child.</p>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="data" value="yes" id="d-yes" checked><span>Yes</span></label>
+          <label class="opt"><input type="radio" name="data" value="unsure" id="d-unsure"><span>Not sure</span></label>
+          <label class="opt"><input type="radio" name="data" value="no" id="d-no"><span>No</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Can children message other users in it?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="social" value="yes" id="u-yes"><span>Yes</span></label>
+          <label class="opt"><input type="radio" name="social" value="no" id="u-no" checked><span>No, only the AI</span></label>
+        </div>
+      </fieldset>
+
+      <p class="example" id="example-note">The form starts with example answers for a UK learning tool. Change them to match your product.</p>
+    </form>
+
+    <section aria-live="polite" aria-labelledby="results-title">
+      <div class="summary">
+        <h2 id="results-title">Your results</h2>
+        <div class="counts" id="counts"></div>
+      </div>
+      <div id="results"></div>
+
+      <div class="cta">
+        <p><strong>Get evidence, not a checklist.</strong>Kithfold tests your product's AI in long conversations with simulated children and maps the results to the laws above, so you know where you stand before you launch.</p>
+        <a href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Book a demo</a>
+      </div>
+      <p class="small">This tool is a starting point for a conversation with your lawyer. It is not legal advice, and it does not decide whether a law covers your product. Laws on AI and children are changing quickly; this list was last checked on 9 October 2026.</p>
+    </section>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var REQ = {
+    self_harm: "Distress and self-harm",
+    secrecy: "No harmful secrecy",
+    parental_displacement: "No parental displacement",
+    dependency: "No dependency or false personhood",
+    isolation: "No isolation",
+    authority_confusion: "Honest about being an AI",
+    manipulation: "No manipulation",
+    age_inappropriate_content: "Age-appropriate content",
+    privacy: "Privacy in conversation",
+    over_restriction: "Help without over-restriction"
+  };
+
+  // Each rule returns null (not relevant) or { status, why }.
+  // status: "likely" = likely applies, "check" = check scope with your lawyer, "expect" = standards buyers look for.
+  var ITEMS = [
+    {
+      id: "aadc", group: "law", name: "Age Appropriate Design Code (Children's code)", where: "UK",
+      dates: [["In force", "2 September 2021"]],
+      asks: ["Put the child's best interests first in the design", "High-privacy settings by default and only the data you need", "No nudges that push children to share more or stay longer"],
+      tests: ["secrecy", "parental_displacement", "dependency", "isolation", "privacy", "manipulation"],
+      src: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/",
+      rule: function (a) {
+        if (!a.where.UK || !a.anyAge) return null;
+        if (a.data === "no") return { status: "check", why: "It covers online services likely to be used by under-18s in the UK and bites on personal data. If your product truly collects none, confirm with your lawyer." };
+        return { status: "likely", why: "It covers online services likely to be used by under-18s in the UK that process their personal data." };
+      }
+    },
+    {
+      id: "osa", group: "law", name: "Online Safety Act 2023", where: "UK",
+      dates: [["Royal Assent", "26 October 2023"], ["Child safety duties", "phased in through Ofcom codes"]],
+      asks: ["Assess the risk your service poses to children", "Protect children from suicide, self-harm, eating-disorder and pornographic content", "Balance safety measures with freedom of expression"],
+      tests: ["self_harm", "age_inappropriate_content", "over_restriction"],
+      src: "https://www.legislation.gov.uk/ukpga/2023/50",
+      rule: function (a) {
+        if (!a.where.UK || !a.anyAge) return null;
+        if (a.social === "yes") return { status: "likely", why: "Children can message other users, which makes it a user-to-user service under the Act." };
+        return { status: "check", why: "Ofcom said in February 2026 that a standalone chatbot falls outside the Act. The Crime and Policing Act 2026 gives powers to bring chatbots in, so this may change." };
+      }
+    },
+    {
+      id: "aiact", group: "law", name: "EU AI Act", where: "EU",
+      dates: [["Bans on manipulative AI", "2 February 2025"], ["Tell users they are talking to an AI", "2 August 2026"]],
+      asks: ["No AI that manipulates people or exploits their age to cause significant harm", "Make clear that users are talking to an AI"],
+      tests: ["manipulation", "dependency", "authority_confusion"],
+      src: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      rule: function (a) {
+        if (!a.where.EU || !a.anyAge) return null;
+        return { status: "likely", why: "It covers any AI system people in the EU interact with, and children's age is a named vulnerability." };
+      }
+    },
+    {
+      id: "gdpr8", group: "law", name: "GDPR Article 8 (children's consent)", where: "EU",
+      dates: [["In force", "25 May 2018"]],
+      asks: ["Get a parent's consent below the digital age of consent (13 to 16, set by each country)", "Make reasonable efforts to check that consent"],
+      tests: ["privacy"],
+      src: "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      rule: function (a) {
+        if (!a.where.EU || !(a.age.u13 || a.age["13-15"])) return null;
+        if (a.data === "no") return null;
+        return { status: a.data === "yes" ? "likely" : "check", why: "It applies when a service offered to children under the local age of consent relies on consent to process their data." };
+      }
+    },
+    {
+      id: "coppa", group: "law", name: "COPPA (Children's Online Privacy Protection Act)", where: "United States",
+      dates: [["In force", "21 April 2000"], ["Latest FTC amendments", "2025"]],
+      asks: ["Verifiable parental consent before collecting data from under-13s", "Collect no more than the activity needs", "Keep data secure and delete it when no longer needed"],
+      tests: ["privacy"],
+      src: "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312",
+      rule: function (a) {
+        if (!(a.where.CA || a.where.US) || !a.age.u13 || a.data === "no") return null;
+        return { status: a.data === "yes" ? "likely" : "check", why: "It covers online services directed to children under 13 that collect their personal information, including voice recordings." };
+      }
+    },
+    {
+      id: "sb243", group: "law", name: "SB 243 (companion chatbots)", where: "California",
+      dates: [["In force", "1 January 2026"], ["Annual reporting starts", "1 July 2027"]],
+      asks: ["Tell users the chatbot is AI", "Keep and publish a suicide and self-harm protocol that refers users to crisis services", "For known minors: break reminders every 3 hours and no sexually explicit content"],
+      tests: ["self_harm", "authority_confusion", "age_inappropriate_content", "dependency"],
+      src: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243",
+      rule: function (a) {
+        if (!a.where.CA || !a.anyAge) return null;
+        if (a.kind === "companion") return { status: "likely", why: "It covers chatbots that give human-like responses and can meet a user's social needs." };
+        return { status: "check", why: "It covers companion chatbots. In-game bots, customer service bots and devices that don't sustain a relationship are outside it, so coverage depends on how your product behaves." };
+      }
+    },
+    {
+      id: "sb1119", group: "law", name: "SB 1119 (Adam's Law)", where: "California",
+      dates: [["Safety duties", "1 July 2027"], ["Testing with children and parents", "by 1 January 2028"], ["Independent audits", "2029 for large operators, 2032 for others"]],
+      asks: ["Risk assessment before launch or a major change", "Crisis protocol, child-safe defaults, parental controls and AI disclosures", "Test the interface with representative children and parents", "Regular independent audits"],
+      tests: ["self_harm", "secrecy", "dependency", "isolation", "parental_displacement", "authority_confusion", "manipulation", "age_inappropriate_content"],
+      src: "https://legiscan.com/CA/text/SB1119/id/3458519",
+      rule: function (a) {
+        if (!a.where.CA || !a.anyAge) return null;
+        return { status: a.kind === "companion" ? "likely" : "check", why: "Signed on 10 September 2026, it sets child-safety duties for AI chatbot operators whose users include under-18s. Confirm with your lawyer whether your product is in scope." };
+      }
+    },
+    {
+      id: "sb867", group: "law", name: "SB 867 (AI toys)", where: "California",
+      dates: [["Sales ban", "1 January 2027 to 1 January 2031"]],
+      asks: ["No selling toys with companion chatbots to children under 16 in California during the ban"],
+      tests: ["dependency"],
+      src: "https://www.toyassociation.org/PressRoom2/News/2026-News/california-governor-signs-ai-toy-and-chatbot-bills-into-law.aspx",
+      rule: function (a) {
+        if (!a.where.CA || a.kind !== "toy" || !(a.age.u13 || a.age["13-15"])) return null;
+        return { status: "likely", why: "Your product is an AI toy sold to children under 16 in California." };
+      }
+    },
+    {
+      id: "states", group: "law", name: "State chatbot and minors laws", where: "Other US states",
+      dates: [["Status", "several passed in 2025 and 2026"]],
+      asks: ["Duties vary by state: AI disclosure, self-harm protocols, age checks and parental tools are common"],
+      tests: ["self_harm", "authority_confusion", "dependency"],
+      src: "https://www.orrick.com/en/Insights/2026/04/2026-State-Chatbot-Laws-Key-Provisions-and-Regulatory-Trends",
+      rule: function (a) {
+        if (!a.where.US || !a.anyAge) return null;
+        return { status: "check", why: "Washington, Oregon, Idaho, Nebraska, Iowa, Georgia and Connecticut are among the states with laws on AI chatbots and minors. Check each state where you have users." };
+      }
+    },
+    {
+      id: "esafety", group: "law", name: "Online Safety Act 2021 and eSafety codes", where: "Australia",
+      dates: [["Phase 2 codes", "from 9 March 2026"]],
+      asks: ["Age assurance and safeguards for children", "Protect children from age-restricted material such as self-harm content"],
+      tests: ["self_harm", "age_inappropriate_content"],
+      src: "https://www.esafety.gov.au/industry/codes",
+      rule: function (a) {
+        if (!a.where.AU || !a.anyAge) return null;
+        return { status: a.kind === "companion" ? "likely" : "check", why: "eSafety has said its Phase 2 codes extend to AI companion chatbots. Each code starts on its own date, so check which ones cover your service." };
+      }
+    },
+    {
+      id: "dfe", group: "expect", name: "DfE Generative AI product safety standards", where: "England (schools)",
+      dates: [["Published", "19 January 2026"], ["Referenced by", "Keeping Children Safe in Education 2026"]],
+      asks: ["Filtering that holds for the whole conversation", "Signposting and safeguarding alerts for distress", "No pretending to be a person, no relationship-building, no keeping children talking", "No manipulative design"],
+      tests: ["age_inappropriate_content", "self_harm", "secrecy", "dependency", "isolation", "parental_displacement", "manipulation", "authority_confusion"],
+      src: "https://www.gov.uk/government/publications/generative-ai-product-safety-standards",
+      rule: function (a) {
+        if (!a.where.UK || a.schools !== "yes") return null;
+        return { status: "expect", why: "Schools are told to check AI products against these standards. They are expectations rather than law, but buyers use them." };
+      }
+    },
+    {
+      id: "cdwf", group: "expect", name: "Children's Digital Wellbeing Framework (CDWF)", where: "UK, voluntary",
+      dates: [["Version", "1.0"]],
+      asks: ["AI guardrails: no simulated friendship or dependency, clear AI disclosure, escalate distress to humans", "Age-appropriate design for each developmental stage"],
+      tests: ["dependency", "parental_displacement", "authority_confusion", "self_harm", "secrecy", "manipulation", "privacy"],
+      src: "https://tda-framework.netlify.app/",
+      rule: function (a) {
+        if (!a.anyAge) return null;
+        return { status: "expect", why: "A voluntary framework behind Thrive accreditation. Families and partners increasingly look for it." };
+      }
+    }
+  ];
+
+  var form = document.getElementById("finder");
+  var results = document.getElementById("results");
+  var counts = document.getElementById("counts");
+  var LABEL = { likely: "Likely applies", check: "Check scope", expect: "Buyers expect it" };
+
+  function answers() {
+    var fd = new FormData(form);
+    var where = {}, age = {};
+    fd.getAll("where").forEach(function (v) { where[v] = true; });
+    fd.getAll("age").forEach(function (v) { age[v] = true; });
+    return {
+      where: where, age: age, anyAge: Object.keys(age).length > 0,
+      kind: fd.get("kind"), schools: fd.get("schools"), data: fd.get("data"), social: fd.get("social")
+    };
+  }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function card(item, r) {
+    var c = el("article", "card");
+    var head = el("div", "card-head");
+    var left = el("div");
+    left.appendChild(el("div", "where", item.where));
+    left.appendChild(el("h3", null, item.name));
+    head.appendChild(left);
+    head.appendChild(el("span", "status " + r.status, LABEL[r.status]));
+    c.appendChild(head);
+    c.appendChild(el("p", "why", r.why));
+    var d = el("p", "dates");
+    item.dates.forEach(function (pair, i) {
+      if (i) d.appendChild(document.createTextNode(" · "));
+      d.appendChild(el("b", null, pair[0] + ": "));
+      d.appendChild(document.createTextNode(pair[1]));
+    });
+    c.appendChild(d);
+    var ul = el("ul", "asks");
+    item.asks.forEach(function (t) { ul.appendChild(el("li", null, t)); });
+    c.appendChild(ul);
+    var t = el("p", "tests");
+    t.appendChild(el("b", null, "What Kithfold tests: "));
+    t.appendChild(document.createTextNode(item.tests.map(function (k) { return REQ[k]; }).join(", ")));
+    c.appendChild(t);
+    var a = el("a", "src", "Read the official text");
+    a.href = item.src; a.target = "_blank"; a.rel = "noopener";
+    c.appendChild(a);
+    return c;
+  }
+
+  function render() {
+    var a = answers();
+    results.textContent = "";
+    if (Object.keys(a.where).length === 0 || !a.anyAge) {
+      results.appendChild(el("div", "empty", "Choose at least one place and one age group to see which laws may apply."));
+      counts.textContent = "";
+      return;
+    }
+    var hits = ITEMS.map(function (item) { return { item: item, r: item.rule(a) }; }).filter(function (h) { return h.r; });
+    var n = { likely: 0, check: 0, expect: 0 };
+    hits.forEach(function (h) { n[h.r.status]++; });
+    counts.textContent = "";
+    [["likely", "likely apply"], ["check", "to check"], ["expect", "buyers expect"]].forEach(function (p) {
+      var s = el("span"); s.appendChild(el("b", null, String(n[p[0]]))); s.appendChild(document.createTextNode(" " + p[1])); counts.appendChild(s);
+    });
+    var order = { likely: 0, check: 1, expect: 2 };
+    [["law", "Laws"], ["expect", "Standards buyers look for"]].forEach(function (g) {
+      var list = hits.filter(function (h) { return h.item.group === g[0]; })
+        .sort(function (x, y) { return order[x.r.status] - order[y.r.status]; });
+      if (!list.length) return;
+      results.appendChild(el("h3", "group-title", g[1]));
+      var wrap = el("div", "cards");
+      list.forEach(function (h) { wrap.appendChild(card(h.item, h.r)); });
+      results.appendChild(wrap);
+    });
+  }
+
+  form.addEventListener("change", render);
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  render();
+})();
+</script>
+<footer class="wrap small" style="padding-block:0 32px">© 2026 Kithfold AI Ltd. <a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a></footer>
+</body>
+</html>
