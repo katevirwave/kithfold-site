@@ -440,6 +440,75 @@
   .stat-band.one .stat{padding:34px 32px}
   .stat-band.one .n{font-size:clamp(3rem,7vw,5.5rem)}
   .stat-band.one .l{font-size:1.15rem}
+  /* programmes: Kithfold Keep + Open Fold */
+  .g-sage{background:var(--sage-tint)}
+  .prog-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,88px);align-items:center}
+  .prog-grid.flip{grid-template-columns:.75fr 1.25fr}
+  @media (max-width:900px){.prog-grid,.prog-grid.flip{grid-template-columns:1fr}.prog-grid.flip .char-card{order:2}}
+  .prog-copy{display:grid;gap:20px;align-content:start}
+  .keep-list{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}
+  @media (max-width:640px){.keep-list{grid-template-columns:1fr}}
+  .keep-list li{display:grid;gap:4px;padding-top:14px;border-top:1px solid var(--line)}
+  .keep-list b{font-family:var(--serif);font-weight:400;font-size:1.2rem;letter-spacing:-.01em}
+  .keep-list span{font-size:.93rem;color:var(--ink-2)}
+  .char-card{background:var(--card);border-radius:28px;box-shadow:var(--shadow);padding:clamp(22px,3vw,32px);display:grid;gap:14px;justify-items:center;text-align:center;max-width:420px;width:100%;justify-self:center}
+  .char-stage{width:100%;aspect-ratio:1/1;border-radius:22px;display:grid;place-items:center;background:var(--heather-tint)}
+  .fold-card .char-stage{background:var(--sage-tint)}
+  .char-stage > svg{width:66%;height:auto;color:var(--ink);overflow:visible;animation:shepfloat 6s cubic-bezier(.45,0,.55,1) infinite}
+  .fold-card .char-stage > svg{animation-delay:-3s}
+  .char-stage .signal{stroke:var(--heather);animation:shepsignal 2.4s ease-in-out infinite}
+  .char-stage .signal.r{animation-delay:.3s}
+  .say{font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.3;color:var(--ink)}
+  .char-name{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+  .gives{margin-top:6px;width:100%;text-align:left;display:grid;gap:4px;padding:16px 18px;border-radius:16px;background:var(--sage-tint)}
+  .gives b{font-weight:600;color:var(--sage-deep)}
+  .gives span{font-size:.9rem;color:var(--ink-2)}
+  .fold-who{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:640px){.fold-who{grid-template-columns:1fr}}
+  .fold-who div{background:var(--card);border-radius:16px;box-shadow:var(--shadow-card),var(--ring);padding:16px 18px;display:grid;gap:4px;align-content:start}
+  .fold-who b{font-weight:600}
+  .fold-who span{font-size:.88rem;color:var(--ink-2)}
+  .fold-terms{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+  @media (max-width:640px){.fold-terms{grid-template-columns:1fr}}
+  .fold-terms>div{display:grid;gap:10px;align-content:start}
+  .fold-terms ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.95rem;color:var(--ink-2)}
+  .fold-terms li{display:grid;grid-template-columns:16px 1fr;gap:10px}
+  .fold-terms li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage-deep);margin-top:9px;justify-self:center}
+  .g-sage .btn-ghost{background:var(--card)}
+  @media (prefers-reduced-motion:reduce){.char-stage svg,.char-stage .signal{animation:none}.char-stage .signal{opacity:1}}
+  /* programmes: animation */
+  .js .anim .rv{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.33,1,.68,1),transform .7s cubic-bezier(.33,1,.68,1);transition-delay:var(--d,0ms)}
+  .js .anim.in .rv{opacity:1;transform:none}
+  .keep-list b{font-size:1.35rem}
+  .keep-list li{position:relative;padding-left:26px}
+  .keep-list li::before{content:"";position:absolute;left:0;top:22px;width:10px;height:10px;border-radius:50%;background:var(--sage)}
+  .gives{text-decoration:none;justify-items:start;grid-template-columns:1fr auto;align-items:center;transition:background .2s}
+  .gives:hover{background:color-mix(in srgb,var(--sage-tint) 70%,var(--sage) 30%)}
+  .gives .leaf{width:14px;height:14px;border-radius:50% 0;background:var(--sage-deep);transform:rotate(45deg)}
+  .anim.in .gives .leaf{animation:leafdrift 3.2s ease-in-out 1.4s infinite}
+  @keyframes leafdrift{0%,100%{transform:rotate(45deg) translate(0,0);opacity:1}50%{transform:rotate(60deg) translate(4px,6px);opacity:.75}}
+  .watch .eye{transform-box:fill-box;transform-origin:center;animation:eyeblink 5s infinite}
+  .watch .look{animation:look 7s ease-in-out infinite}
+  @keyframes eyeblink{0%,45%,51%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+  @keyframes look{0%,20%,100%{transform:translateX(0)}30%,45%{transform:translateX(-22px)}60%,75%{transform:translateX(22px)}}
+  .gate-stage{position:relative}
+  .gate-scene{width:100%!important;height:auto;animation:none!important}
+  .gate{transform-box:view-box;transform-origin:160px 230px;transition:transform 1.1s cubic-bezier(.5,0,.2,1) .4s}
+  .anim.in .gate{transform:scaleX(.08)}
+  .gate-stage{overflow:hidden}
+  .clover-hop{transform-box:view-box;transform-origin:200px 290px;transform:translateX(-300px)}
+  .anim.in .clover-hop{animation:hopin 1.6s cubic-bezier(.33,1,.68,1) 1.2s forwards,idle 3.6s ease-in-out 2.8s infinite}
+  @keyframes hopin{0%{transform:translate(-300px,0)}15%{transform:translate(-230px,-34px)}30%{transform:translate(-160px,0)}45%{transform:translate(-95px,-34px)}62%{transform:translate(-35px,0)}80%{transform:translate(-8px,-16px)}100%{transform:translate(0,0)}}
+  @keyframes idle{0%,100%{transform:translate(0,0)}50%{transform:translate(0,-6px)}}
+  .bubble-say{position:absolute;top:8%;right:8%;background:var(--card);border-radius:16px 16px 16px 4px;box-shadow:var(--shadow-card),var(--ring);padding:8px 14px;font-family:var(--serif);font-style:italic;font-size:1.05rem;opacity:0;transform:translateY(8px) scale(.9);transition:opacity .5s ease 2.9s,transform .5s cubic-bezier(.34,1.56,.64,1) 2.9s}
+  .anim.in .bubble-say{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .js .anim .rv{opacity:1;transform:none;transition:none}
+    .gate{transform:scaleX(.08);transition:none}
+    .clover-hop,.anim.in .clover-hop{animation:none;transform:none}
+    .bubble-say{opacity:1;transform:none;transition:none}
+    .watch .eye,.watch .look,.anim.in .gives .leaf{animation:none}
+  }
 </style>
 </head>
 <body>
@@ -456,7 +525,7 @@
       <li><a href="#shep">Meet Shep</a></li>
       <li><a href="#why">Why now</a></li>
       <li><a href="laws/">Which laws apply?</a></li>
-      <li><a href="#demo">Book a demo</a></li>
+      <li><a href="#keep">Programmes</a></li>
     </ul>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="https://app.kithfold.ai" rel="noopener">Sign in</a>
@@ -760,6 +829,84 @@
     </div>
   </section>
 
+  <section id="keep" class="g-white anim">
+    <div class="wrap">
+      <div class="prog-grid">
+        <div class="prog-copy">
+          <span class="eyebrow rv">Kithfold Keep · Enterprise</span>
+          <h2 class="rv" style="--d:80ms">For AI that talks to millions of children.</h2>
+          <p class="lede rv" style="--d:160ms">Shep watches every release, every product, every market.</p>
+          <ul class="keep-list">
+            <li class="rv" style="--d:420ms"><b>Every release</b></li>
+            <li class="rv" style="--d:560ms"><b>Your own scenario packs</b></li>
+            <li class="rv" style="--d:700ms"><b>Certified in every market</b></li>
+            <li class="rv" style="--d:840ms"><b>A named reviewer</b></li>
+          </ul>
+          <div class="cta-row rv" style="--d:1000ms">
+            <a class="btn btn-primary" href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Talk to us about Keep</a>
+          </div>
+        </div>
+        <aside class="char-card keep-card rv" style="--d:200ms">
+          <div class="char-stage watch"><svg viewBox="220 170 820 840" role="img" aria-label="Shep, the Kithfold sheepdog, keeping watch"><path class="signal" d="M540 205 Q505 250 540 295" fill="none" stroke-width="16" stroke-linecap="round"/><path class="signal r" d="M714 205 Q749 250 714 295" fill="none" stroke-width="16" stroke-linecap="round"/><path d="M627 300 V420" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><circle cx="627" cy="250" r="55" fill="var(--heather)"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><g class="look"><circle class="eye" cx="555" cy="664" r="40" fill="currentColor"/><circle class="eye" cx="760" cy="664" r="40" fill="currentColor"/></g><path d="M590 748 Q627 772 664 748" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></div>
+          <p class="say">“I keep watch so your team can ship.”</p>
+          <a class="gives" href="#open-fold"><b>Keep members fund Open Fold.</b><span class="leaf" aria-hidden="true"></span></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="open-fold" class="g-sage anim">
+    <div class="wrap">
+      <div class="prog-grid flip">
+        <aside class="char-card fold-card rv">
+          <div class="char-stage gate-stage">
+            <svg class="gate-scene" viewBox="40 100 320 210" role="img" aria-label="The gate to the fold swings open and Clover the lamb hops through">
+              <ellipse cx="200" cy="292" rx="190" ry="16" fill="var(--sage)" opacity=".35"/>
+              <g stroke="var(--ink)" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">
+                <rect x="14" y="196" width="134" height="12" rx="4"/><rect x="14" y="240" width="134" height="12" rx="4"/>
+                <rect x="252" y="196" width="134" height="12" rx="4"/><rect x="252" y="240" width="134" height="12" rx="4"/>
+                <rect x="24" y="176" width="16" height="112" rx="5"/><rect x="88" y="176" width="16" height="112" rx="5"/>
+                <rect x="296" y="176" width="16" height="112" rx="5"/><rect x="360" y="176" width="16" height="112" rx="5"/>
+              </g>
+              <g class="gate" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round">
+                <rect x="160" y="184" width="80" height="12" rx="4" fill="#FFFFFF"/>
+                <rect x="160" y="250" width="80" height="12" rx="4" fill="#FFFFFF"/>
+                <rect x="164" y="178" width="12" height="96" rx="4" fill="#FFFFFF"/>
+                <rect x="224" y="178" width="12" height="96" rx="4" fill="#FFFFFF"/>
+                <path d="M176 254 L224 192" stroke-width="10" stroke-linecap="round"/>
+                <path d="M176 254 L224 192" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <g stroke="var(--ink)" stroke-width="4" fill="var(--sage)"><rect x="146" y="166" width="16" height="122" rx="5"/><rect x="238" y="166" width="16" height="122" rx="5"/></g>
+              <g class="clover-hop"><svg x="130" y="150" width="140" height="140" viewBox="200 140 860 860" overflow="visible"><g class="sprig"><path d="M627 330 Q622 290 640 262" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><circle cx="604" cy="228" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/><circle cx="678" cy="228" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/><circle cx="641" cy="182" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/></g><ellipse cx="330" cy="610" rx="115" ry="52" transform="rotate(-18 330 610)" fill="var(--sage)" stroke="currentColor" stroke-width="18"/><ellipse cx="924" cy="610" rx="115" ry="52" transform="rotate(18 924 610)" fill="var(--sage)" stroke="currentColor" stroke-width="18"/><g stroke="currentColor" stroke-width="36" fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/></g><g fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/><circle cx="627" cy="520" r="160"/></g><path d="M440 600 C440 470 520 440 627 440 C734 440 814 470 814 600 V730 C814 860 730 930 627 930 C524 930 440 860 440 730 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><circle cx="555" cy="675" r="38" fill="currentColor"/><circle cx="700" cy="675" r="38" fill="currentColor"/><circle cx="508" cy="770" r="30" fill="var(--ember-tint)"/><circle cx="747" cy="770" r="30" fill="var(--ember-tint)"/><path d="M590 785 Q627 815 664 785" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></g>
+            </svg>
+            <p class="bubble-say" aria-hidden="true">Come on in!</p>
+          </div>
+          <p class="say">“New here? Let's see if you qualify.”</p>
+        </aside>
+        <div class="prog-copy">
+          <span class="eyebrow rv" style="--d:100ms">Open Fold · Every quarter</span>
+          <h2 class="rv" style="--d:180ms">The gate opens for small teams too.</h2>
+          <p class="lede rv" style="--d:260ms">Each quarter we cover certification for a few edtech teams, startups and non-profits. Kate reviews every application.</p>
+          <div class="fold-terms">
+            <div class="rv" style="--d:1600ms">
+              <span class="fine-label">You get</span>
+              <ul><li>A full certification run</li><li>The Kithfold AI Certified seal, once you pass</li></ul>
+            </div>
+            <div class="rv" style="--d:1750ms">
+              <span class="fine-label">We ask</span>
+              <ul><li>A short case study</li><li>Use of de-identified findings</li></ul>
+            </div>
+          </div>
+          <p class="shep-rule rv" style="--d:1900ms">Open Fold covers the fee. The standard stays the same.</p>
+          <div class="cta-row rv" style="--d:2050ms">
+            <a class="btn btn-primary" href="open-fold/">Apply to Open Fold</a>
+            <a class="btn btn-ghost" href="laws/">Which laws apply to you?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="demo">
     <div class="wrap">
       <div class="demo">
@@ -804,7 +951,7 @@
   <div class="wrap">
     <div><svg viewBox="220 170 820 840" class="mark" aria-hidden="true"><path d="M627 300 V420" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><circle cx="627" cy="250" r="55" fill="var(--sage)"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><circle cx="525" cy="672" r="40" fill="currentColor"/><circle cx="730" cy="672" r="40" fill="currentColor"/><path d="M572 738 Q627 785 682 738" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg><span class="motto">Evidence. Judgement. Release.</span></div>
     <span class="email">kate@kithfold.ai</span>
-    <nav aria-label="Legal"><a href="https://app.kithfold.ai" rel="noopener">Sign in</a><a href="https://www.linkedin.com/company/kithfold-ai" target="_blank" rel="noopener">LinkedIn</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
+    <nav aria-label="Legal"><a href="https://app.kithfold.ai" rel="noopener">Sign in</a><a href="https://www.linkedin.com/company/kithfold-ai" target="_blank" rel="noopener">LinkedIn</a><a href="open-fold/">Open Fold</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
     <p class="legal">© 2026 Kithfold AI Ltd. Registered in England and Wales, company no. 17482165. Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ.</p>
   </div>
 </footer>
@@ -858,5 +1005,14 @@
     setTimeout(function(){i=(i+1)%packs.length;play();},t);
   }
   setTimeout(play,1400);
+})();
+</script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.anim');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.3});
+  els.forEach(function(e){io.observe(e)});
 })();
 </script>

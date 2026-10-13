@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Open Fold · Kithfold AI</title>
+<meta name="description" content="Open Fold covers full Kithfold certification for edtech teams, early-stage startups and non-profits building AI for children. Applications are reviewed every quarter.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kithfold.ai/open-fold/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Open Fold · Kithfold AI">
+<meta property="og:description" content="Full Kithfold certification, fee covered, for small teams building AI for children. Reviewed every quarter.">
+<meta property="og:image" content="https://kithfold.ai/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Single light look by choice (Kithfold brand), matching kithfold.ai and /laws. */
+:root {
+  color-scheme: light;
+  --oat: #F5F1EC;
+  --panel: #FFFFFF;
+  --plum: #3A2A45;
+  --muted: #5A4668;
+  --faint: #6B5F76;
+  --line: #DDD5D9;
+  --heather: #7A5E86;
+  --heather-soft: #F0E7EF;
+  --sage: #7FA58A;
+  --sage-deep: #3f6e4d;
+  --sage-soft: #E6EFE8;
+  --ember-tint: #F6E3DE;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--oat); color: var(--plum); font-family: var(--body); font-size: 16px; line-height: 1.55; padding: 0 16px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 56px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.top a { text-decoration: none; }
+.brand { font-family: var(--body); font-weight: 600; font-size: 18px; color: var(--plum); }
+.brand span { color: var(--faint); font-weight: 400; }
+.back { font-size: 14px; color: var(--muted); }
+.eyebrow { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage-deep); }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 32px; align-items: center; margin-top: 32px; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .clover { max-width: 200px; } }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; letter-spacing: -0.02em; margin: 12px 0 14px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 60ch; margin: 0; font-size: 17px; }
+.clover { background: var(--sage-soft); border-radius: 28px; aspect-ratio: 1/1; display: grid; place-items: center; width: 100%; }
+.clover svg { width: 68%; height: auto; color: var(--plum); overflow: visible; }
+.say { margin: 12px 0 0; font-family: var(--display); font-style: italic; font-size: 17px; text-align: center; }
+
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.card h2 { font-family: var(--display); font-weight: 400; font-size: 20px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.card ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.card li { margin: 4px 0; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 40px 0 0; padding: 0; list-style: none; counter-reset: s; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+.steps li { counter-increment: s; display: grid; gap: 4px; }
+.steps li::before { content: counter(s); font-family: var(--display); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--sage-soft); color: var(--sage-deep); margin-bottom: 6px; }
+.steps b { font-weight: 600; }
+.steps span { font-size: 14px; color: var(--muted); }
+.rule { margin-top: 28px; font-family: var(--display); font-style: italic; font-size: 20px; color: var(--heather); }
+
+form { margin-top: 44px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 18px; }
+form h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0; letter-spacing: -0.01em; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+label, legend { font-weight: 600; font-size: 14px; display: block; margin-bottom: 6px; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+input[type=text], input[type=email], input[type=url], select, textarea { width: 100%; font: inherit; color: var(--plum); background: var(--oat); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; min-height: 46px; }
+textarea { min-height: 110px; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--heather); outline-offset: 1px; background: var(--panel); }
+.hint { color: var(--faint); font-size: 13px; margin: -2px 0 6px; font-weight: 400; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { position: relative; margin: 0; font-weight: 400; }
+.opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.opt span { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; background: var(--panel); transition: background .15s, border-color .15s; }
+.opt input:checked + span { background: var(--sage-soft); border-color: var(--sage-deep); font-weight: 500; }
+.opt input:checked + span::before { content: "✓"; margin-right: 6px; color: var(--sage-deep); font-weight: 600; }
+.opt input:focus-visible + span { outline: 2px solid var(--heather); outline-offset: 2px; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; color: var(--muted); }
+.check input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--sage-deep); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+button { font: inherit; font-weight: 600; font-size: 15px; border: 0; border-radius: 999px; padding: 13px 24px; background: var(--plum); color: var(--oat); cursor: pointer; min-height: 48px; }
+button:hover { background: var(--heather); }
+button:focus-visible { outline: 2px solid var(--heather); outline-offset: 3px; }
+.note { font-size: 13px; color: var(--faint); margin: 0; }
+.status { display: none; padding: 14px 16px; border-radius: 12px; background: var(--sage-soft); color: var(--sage-deep); font-size: 14px; }
+.status.show { display: block; }
+.small { margin-top: 18px; font-size: 12.5px; color: var(--faint); max-width: 75ch; }
+.small a { color: var(--heather); text-underline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="../">Kithfold<span>.ai</span></a><a class="back" href="../#open-fold">← Back to kithfold.ai</a></div>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Open Fold · Every quarter</span>
+      <h1>Full Kithfold certification, with the fee covered.</h1>
+      <p class="lede">Open Fold is for edtech teams, early-stage startups and non-profits building AI for children. Each quarter we cover certification for a small number of teams. Our founder, Kate Julia, reads every application herself.</p>
+    </div>
+    <div>
+      <div class="clover"><svg role="img" aria-label="Clover, the Kithfold lamb, smiling" viewBox="200 140 860 860"><g class="sprig"><path d="M627 330 Q622 290 640 262" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><circle cx="604" cy="228" r="40" fill="#7FA58A" stroke="currentColor" stroke-width="12"/><circle cx="678" cy="228" r="40" fill="#7FA58A" stroke="currentColor" stroke-width="12"/><circle cx="641" cy="182" r="40" fill="#7FA58A" stroke="currentColor" stroke-width="12"/></g><ellipse cx="330" cy="610" rx="115" ry="52" transform="rotate(-18 330 610)" fill="#7FA58A" stroke="currentColor" stroke-width="18"/><ellipse cx="924" cy="610" rx="115" ry="52" transform="rotate(18 924 610)" fill="#7FA58A" stroke="currentColor" stroke-width="18"/><g stroke="currentColor" stroke-width="36" fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/></g><g fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/><circle cx="627" cy="520" r="160"/></g><path d="M440 600 C440 470 520 440 627 440 C734 440 814 470 814 600 V730 C814 860 730 930 627 930 C524 930 440 860 440 730 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><circle cx="555" cy="675" r="38" fill="currentColor"/><circle cx="700" cy="675" r="38" fill="currentColor"/><circle cx="508" cy="770" r="30" fill="#F6E3DE"/><circle cx="747" cy="770" r="30" fill="#F6E3DE"/><path d="M590 785 Q627 815 664 785" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></div>
+      <p class="say">“New here? Let's see if you qualify.”</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h2>Who can apply</h2>
+      <ul>
+        <li>Edtech teams building for schools or families</li>
+        <li>Early-stage startups building for children</li>
+        <li>Non-profits, charities and social enterprises</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>What you get</h2>
+      <ul>
+        <li>A full certification run against the Kithfold standard</li>
+        <li>Human-signed findings, with the transcripts behind them</li>
+        <li>The Kithfold AI Certified seal for your scope, once you pass</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>What we ask</h2>
+      <ul>
+        <li>A short case study we can publish</li>
+        <li>Permission to use de-identified findings to strengthen the standard</li>
+        <li>Holds fixed before the seal is issued</li>
+      </ul>
+    </div>
+  </div>
+
+  <ol class="steps">
+    <li><b>Apply</b><span>Tell us about your team and your product. Ten minutes.</span></li>
+    <li><b>Kate reviews</b><span>Every application is read by our founder at the end of each quarter.</span></li>
+    <li><b>We let you know</b><span>Selected teams hear from us at the start of the next quarter.</span></li>
+    <li><b>Through the gate</b><span>Your build is tested as a child would use it. Pass, and the seal is yours.</span></li>
+  </ol>
+
+  <p class="rule">Open Fold covers the fee. The standard stays the same.</p>
+
+  <form id="apply" novalidate>
+    <h2>Apply to Open Fold</h2>
+    <div class="row">
+      <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+      <div><label for="f-email">Work email</label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+    </div>
+    <div class="row">
+      <div><label for="f-org">Organisation</label><input type="text" id="f-org" name="organisation" autocomplete="organization" required></div>
+      <div><label for="f-site">Website</label><input type="url" id="f-site" name="website" placeholder="https://" inputmode="url"></div>
+    </div>
+    <fieldset>
+      <legend>Which best describes you?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="type" value="Edtech team" checked><span>Edtech team</span></label>
+        <label class="opt"><input type="radio" name="type" value="Early-stage startup"><span>Early-stage startup</span></label>
+        <label class="opt"><input type="radio" name="type" value="Non-profit or charity"><span>Non-profit or charity</span></label>
+      </div>
+    </fieldset>
+    <div class="row">
+      <div>
+        <label for="f-stage">Stage</label>
+        <select id="f-stage" name="stage">
+          <option>Building, not launched</option>
+          <option>Launched, under 1,000 users</option>
+          <option>Launched, 1,000 users or more</option>
+          <option>Registered charity or non-profit</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-ages">Ages of the children who use it</label>
+        <input type="text" id="f-ages" name="ages" placeholder="For example 5 to 9">
+      </div>
+    </div>
+    <fieldset>
+      <legend>Where are your users?</legend>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="markets" value="UK" checked><span>United Kingdom</span></label>
+        <label class="opt"><input type="checkbox" name="markets" value="EU"><span>European Union</span></label>
+        <label class="opt"><input type="checkbox" name="markets" value="US"><span>United States</span></label>
+        <label class="opt"><input type="checkbox" name="markets" value="Elsewhere"><span>Elsewhere</span></label>
+      </div>
+    </fieldset>
+    <div>
+      <label for="f-product">What does your product do, and where does the AI talk to a child?</label>
+      <textarea id="f-product" name="product" required></textarea>
+    </div>
+    <div>
+      <label for="f-why">Why now?</label>
+      <p class="hint">A launch, a school pilot, a funder asking for evidence. Anything that tells us what certification would change for you.</p>
+      <textarea id="f-why" name="why"></textarea>
+    </div>
+    <label class="check"><input type="checkbox" id="f-agree" name="agree" required> If selected, we're happy to share a short case study and let Kithfold use de-identified findings to strengthen the standard.</label>
+    <div class="actions">
+      <button type="submit">Send application</button>
+      <p class="note">This opens your email app with your answers filled in, addressed to kate@kithfold.ai.</p>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="small">Open Fold places are limited and decided by Kithfold at its discretion. Selection covers the certification fee only: every product is tested against the same standard, with the same pass bar, as every other Kithfold engagement. Larger organisations can talk to us about <a href="../#keep">Kithfold Keep</a>.</p>
+</div>
+<script>
+(function(){
+  var form = document.getElementById('apply'), status = document.getElementById('status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var need = ['f-name','f-email','f-org','f-product'];
+    for (var i = 0; i < need.length; i++) {
+      var el = document.getElementById(need[i]);
+      if (!el.value.trim()) { el.focus(); status.textContent = 'Please fill in ' + el.labels[0].textContent.toLowerCase() + '.'; status.className = 'status show'; return; }
+    }
+    if (!document.getElementById('f-agree').checked) { document.getElementById('f-agree').focus(); status.textContent = 'Please tick the box about the case study and findings.'; status.className = 'status show'; return; }
+    var d = new FormData(form);
+    var lines = [
+      'Name: ' + d.get('name'),
+      'Email: ' + d.get('email'),
+      'Organisation: ' + d.get('organisation'),
+      'Website: ' + (d.get('website') || '-'),
+      'Type: ' + d.get('type'),
+      'Stage: ' + d.get('stage'),
+      'Ages: ' + (d.get('ages') || '-'),
+      'Markets: ' + (d.getAll('markets').join(', ') || '-'),
+      '',
+      'What the product does:',
+      d.get('product'),
+      '',
+      'Why now:',
+      d.get('why') || '-',
+      '',
+      'Agrees to case study and de-identified findings: yes'
+    ];
+    var href = 'mailto:kate@kithfold.ai?subject=' + encodeURIComponent('Open Fold application: ' + d.get('organisation')) + '&body=' + encodeURIComponent(lines.join('\n'));
+    status.textContent = 'Your email app should open with your application ready to send. If it doesn\'t, email kate@kithfold.ai.';
+    status.className = 'status show';
+    window.location.href = href;
+  });
+})();
+</script>
+</body>
+</html>
