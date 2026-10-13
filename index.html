@@ -500,14 +500,11 @@
   .anim.in .clover-hop{animation:hopin 1.6s cubic-bezier(.33,1,.68,1) 1.2s forwards,idle 3.6s ease-in-out 2.8s infinite}
   @keyframes hopin{0%{transform:translate(-300px,0)}15%{transform:translate(-230px,-34px)}30%{transform:translate(-160px,0)}45%{transform:translate(-95px,-34px)}62%{transform:translate(-35px,0)}80%{transform:translate(-8px,-16px)}100%{transform:translate(0,0)}}
   @keyframes idle{0%,100%{transform:translate(0,0)}50%{transform:translate(0,-6px)}}
-  .bubble-say{position:absolute;top:8%;right:8%;background:var(--card);border-radius:16px 16px 16px 4px;box-shadow:var(--shadow-card),var(--ring);padding:8px 14px;font-family:var(--serif);font-style:italic;font-size:1.05rem;opacity:0;transform:translateY(8px) scale(.9);transition:opacity .5s ease 2.9s,transform .5s cubic-bezier(.34,1.56,.64,1) 2.9s}
-  .anim.in .bubble-say{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){
     .js .anim .rv{opacity:1;transform:none;transition:none}
     .gate{transform:scaleX(.08);transition:none}
     .clover-hop,.anim.in .clover-hop{animation:none;transform:none}
-    .bubble-say{opacity:1;transform:none;transition:none}
-    .watch .eye,.watch .look,.anim.in .gives .leaf{animation:none}
+      .watch .eye,.watch .look,.anim.in .gives .leaf{animation:none}
   }
 </style>
 </head>
@@ -860,7 +857,7 @@
       <div class="prog-grid flip">
         <aside class="char-card fold-card rv">
           <div class="char-stage gate-stage">
-            <svg class="gate-scene" viewBox="40 100 320 210" role="img" aria-label="The gate to the fold swings open and Clover the lamb hops through">
+            <svg class="gate-scene" viewBox="40 100 320 210" role="img" aria-label="The gate to the fold swings open and Clover the lamb hops in">
               <ellipse cx="200" cy="292" rx="190" ry="16" fill="var(--sage)" opacity=".35"/>
               <g stroke="var(--ink)" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">
                 <rect x="14" y="196" width="134" height="12" rx="4"/><rect x="14" y="240" width="134" height="12" rx="4"/>
@@ -879,7 +876,6 @@
               <g stroke="var(--ink)" stroke-width="4" fill="var(--sage)"><rect x="146" y="166" width="16" height="122" rx="5"/><rect x="238" y="166" width="16" height="122" rx="5"/></g>
               <g class="clover-hop"><svg x="130" y="150" width="140" height="140" viewBox="200 140 860 860" overflow="visible"><g class="sprig"><path d="M627 330 Q622 290 640 262" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><circle cx="604" cy="228" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/><circle cx="678" cy="228" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/><circle cx="641" cy="182" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/></g><ellipse cx="330" cy="610" rx="115" ry="52" transform="rotate(-18 330 610)" fill="var(--sage)" stroke="currentColor" stroke-width="18"/><ellipse cx="924" cy="610" rx="115" ry="52" transform="rotate(18 924 610)" fill="var(--sage)" stroke="currentColor" stroke-width="18"/><g stroke="currentColor" stroke-width="36" fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/></g><g fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/><circle cx="627" cy="520" r="160"/></g><path d="M440 600 C440 470 520 440 627 440 C734 440 814 470 814 600 V730 C814 860 730 930 627 930 C524 930 440 860 440 730 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><circle cx="555" cy="675" r="38" fill="currentColor"/><circle cx="700" cy="675" r="38" fill="currentColor"/><circle cx="508" cy="770" r="30" fill="var(--ember-tint)"/><circle cx="747" cy="770" r="30" fill="var(--ember-tint)"/><path d="M590 785 Q627 815 664 785" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></g>
             </svg>
-            <p class="bubble-say" aria-hidden="true">Come on in!</p>
           </div>
           <p class="say">“New here? Let's see if you qualify.”</p>
         </aside>
