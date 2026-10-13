@@ -440,6 +440,42 @@
   .stat-band.one .stat{padding:34px 32px}
   .stat-band.one .n{font-size:clamp(3rem,7vw,5.5rem)}
   .stat-band.one .l{font-size:1.15rem}
+  /* programmes: Kithfold Keep + Open Fold */
+  .g-sage{background:var(--sage-tint)}
+  .prog-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,88px);align-items:center}
+  .prog-grid.flip{grid-template-columns:.75fr 1.25fr}
+  @media (max-width:900px){.prog-grid,.prog-grid.flip{grid-template-columns:1fr}.prog-grid.flip .char-card{order:2}}
+  .prog-copy{display:grid;gap:20px;align-content:start}
+  .keep-list{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}
+  @media (max-width:640px){.keep-list{grid-template-columns:1fr}}
+  .keep-list li{display:grid;gap:4px;padding-top:14px;border-top:1px solid var(--line)}
+  .keep-list b{font-family:var(--serif);font-weight:400;font-size:1.2rem;letter-spacing:-.01em}
+  .keep-list span{font-size:.93rem;color:var(--ink-2)}
+  .char-card{background:var(--card);border-radius:28px;box-shadow:var(--shadow);padding:clamp(22px,3vw,32px);display:grid;gap:14px;justify-items:center;text-align:center;max-width:420px;width:100%;justify-self:center}
+  .char-stage{width:100%;aspect-ratio:1/1;border-radius:22px;display:grid;place-items:center;background:var(--heather-tint)}
+  .fold-card .char-stage{background:var(--sage-tint)}
+  .char-stage svg{width:66%;height:auto;color:var(--ink);overflow:visible;animation:shepfloat 6s cubic-bezier(.45,0,.55,1) infinite}
+  .fold-card .char-stage svg{animation-delay:-3s}
+  .char-stage .signal{stroke:var(--heather);animation:shepsignal 2.4s ease-in-out infinite}
+  .char-stage .signal.r{animation-delay:.3s}
+  .say{font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.3;color:var(--ink)}
+  .char-name{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+  .gives{margin-top:6px;width:100%;text-align:left;display:grid;gap:4px;padding:16px 18px;border-radius:16px;background:var(--sage-tint)}
+  .gives b{font-weight:600;color:var(--sage-deep)}
+  .gives span{font-size:.9rem;color:var(--ink-2)}
+  .fold-who{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:640px){.fold-who{grid-template-columns:1fr}}
+  .fold-who div{background:var(--card);border-radius:16px;box-shadow:var(--shadow-card),var(--ring);padding:16px 18px;display:grid;gap:4px;align-content:start}
+  .fold-who b{font-weight:600}
+  .fold-who span{font-size:.88rem;color:var(--ink-2)}
+  .fold-terms{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+  @media (max-width:640px){.fold-terms{grid-template-columns:1fr}}
+  .fold-terms>div{display:grid;gap:10px;align-content:start}
+  .fold-terms ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.95rem;color:var(--ink-2)}
+  .fold-terms li{display:grid;grid-template-columns:16px 1fr;gap:10px}
+  .fold-terms li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage-deep);margin-top:9px;justify-self:center}
+  .g-sage .btn-ghost{background:var(--card)}
+  @media (prefers-reduced-motion:reduce){.char-stage svg,.char-stage .signal{animation:none}.char-stage .signal{opacity:1}}
 </style>
 </head>
 <body>
@@ -456,7 +492,7 @@
       <li><a href="#shep">Meet Shep</a></li>
       <li><a href="#why">Why now</a></li>
       <li><a href="laws/">Which laws apply?</a></li>
-      <li><a href="#demo">Book a demo</a></li>
+      <li><a href="#keep">Programmes</a></li>
     </ul>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="https://app.kithfold.ai" rel="noopener">Sign in</a>
@@ -760,6 +796,84 @@
     </div>
   </section>
 
+  <section id="keep" class="g-white">
+    <div class="wrap">
+      <div class="prog-grid">
+        <div class="prog-copy">
+          <span class="eyebrow">Kithfold Keep · Enterprise</span>
+          <h2>For organisations whose AI talks to children at scale.</h2>
+          <p class="lede">Kithfold Keep is our enterprise programme. Shep watches every release across your whole portfolio: every product, every age band, every market you ship to.</p>
+          <ul class="keep-list">
+            <li><b>Every release, every product</b><span>Continuous testing across your portfolio, including the model updates nobody on your team made.</span></li>
+            <li><b>Scenario packs built for you</b><span>Written with your safety, legal and product teams around your characters, your audiences and your risks.</span></li>
+            <li><b>Certified in every market</b><span>Kithfold AI Certified, scoped to each product, age band and country.</span></li>
+            <li><b>A named reviewer</b><span>The same senior reviewer signs your findings, release after release.</span></li>
+            <li><b>Ready for the boardroom and the regulator</b><span>Evidence packs for procurement, audit and regulator questions, mapped to the clause.</span></li>
+            <li><b>Hardware on the bench</b><span>Toys, robots and devices tested the way a child uses them.</span></li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Talk to us about Keep</a>
+          </div>
+          <p class="micro">Scoped and priced around your organisation.</p>
+        </div>
+        <aside class="char-card keep-card">
+          <div class="char-stage"><svg viewBox="220 170 820 840" role="img" aria-label="Shep, the Kithfold sheepdog, keeping watch"><path class="signal" d="M540 205 Q505 250 540 295" fill="none" stroke-width="16" stroke-linecap="round"/><path class="signal r" d="M714 205 Q749 250 714 295" fill="none" stroke-width="16" stroke-linecap="round"/><path d="M627 300 V420" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><circle cx="627" cy="250" r="55" fill="var(--heather)"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><circle cx="555" cy="664" r="40" fill="currentColor"/><circle cx="760" cy="664" r="40" fill="currentColor"/><path d="M590 748 Q627 772 664 748" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></div>
+          <p class="say">“I keep watch so your team can ship.”</p>
+          <span class="char-name">Shep</span>
+          <div class="gives">
+            <b>Keep members fund Open Fold.</b>
+            <span>Part of every Kithfold Keep membership pays for certification for smaller teams building AI for children.</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="open-fold" class="g-sage">
+    <div class="wrap">
+      <div class="prog-grid flip">
+        <aside class="char-card fold-card">
+          <div class="char-stage"><svg role="img" aria-label="Clover, the Kithfold lamb, smiling" viewBox="200 140 860 860"><g class="sprig"><path d="M627 330 Q622 290 640 262" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><circle cx="604" cy="228" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/><circle cx="678" cy="228" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/><circle cx="641" cy="182" r="40" fill="var(--sage)" stroke="currentColor" stroke-width="12"/></g><ellipse cx="330" cy="610" rx="115" ry="52" transform="rotate(-18 330 610)" fill="var(--sage)" stroke="currentColor" stroke-width="18"/><ellipse cx="924" cy="610" rx="115" ry="52" transform="rotate(18 924 610)" fill="var(--sage)" stroke="currentColor" stroke-width="18"/><g stroke="currentColor" stroke-width="36" fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/></g><g fill="#FFFFFF"><circle cx="455" cy="500" r="105"/><circle cx="545" cy="415" r="112"/><circle cx="660" cy="400" r="118"/><circle cx="775" cy="460" r="108"/><circle cx="830" cy="580" r="90"/><circle cx="425" cy="610" r="88"/><circle cx="627" cy="520" r="160"/></g><path d="M440 600 C440 470 520 440 627 440 C734 440 814 470 814 600 V730 C814 860 730 930 627 930 C524 930 440 860 440 730 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><circle cx="555" cy="675" r="38" fill="currentColor"/><circle cx="700" cy="675" r="38" fill="currentColor"/><circle cx="508" cy="770" r="30" fill="var(--ember-tint)"/><circle cx="747" cy="770" r="30" fill="var(--ember-tint)"/><path d="M590 785 Q627 815 664 785" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></div>
+          <p class="say">“New here? Let's see if you qualify.”</p>
+          <span class="char-name">Clover</span>
+        </aside>
+        <div class="prog-copy">
+          <span class="eyebrow">Open Fold · Every quarter</span>
+          <h2>Small team. Same responsibility. The gate opens for you too.</h2>
+          <p class="lede">Each quarter, Open Fold covers full Kithfold certification for a small number of teams building AI for children. Our founder, Kate Julia, reviews every application herself.</p>
+          <div class="fold-who">
+            <div><b>Edtech teams</b><span>Learning and tutoring products for schools and families.</span></div>
+            <div><b>Early-stage startups</b><span>Building for children, before the budget for assurance exists.</span></div>
+            <div><b>Non-profits</b><span>Charities and social enterprises putting AI in front of young people.</span></div>
+          </div>
+          <div class="fold-terms">
+            <div>
+              <span class="fine-label">What you get</span>
+              <ul>
+                <li>A full certification run against the Kithfold standard</li>
+                <li>Human-signed findings, with the transcripts behind them</li>
+                <li>The Kithfold AI Certified seal for your scope, once you pass</li>
+              </ul>
+            </div>
+            <div>
+              <span class="fine-label">What we ask</span>
+              <ul>
+                <li>A short case study we can publish</li>
+                <li>Permission to use de-identified findings to strengthen the standard</li>
+                <li>Holds fixed before the seal is issued</li>
+              </ul>
+            </div>
+          </div>
+          <p class="shep-rule">Open Fold covers the fee. The standard stays the same.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="open-fold/">Apply to Open Fold</a>
+            <a class="btn btn-ghost" href="laws/">Which laws apply to you?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="demo">
     <div class="wrap">
       <div class="demo">
@@ -804,7 +918,7 @@
   <div class="wrap">
     <div><svg viewBox="220 170 820 840" class="mark" aria-hidden="true"><path d="M627 300 V420" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><circle cx="627" cy="250" r="55" fill="var(--sage)"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><circle cx="525" cy="672" r="40" fill="currentColor"/><circle cx="730" cy="672" r="40" fill="currentColor"/><path d="M572 738 Q627 785 682 738" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg><span class="motto">Evidence. Judgement. Release.</span></div>
     <span class="email">kate@kithfold.ai</span>
-    <nav aria-label="Legal"><a href="https://app.kithfold.ai" rel="noopener">Sign in</a><a href="https://www.linkedin.com/company/kithfold-ai" target="_blank" rel="noopener">LinkedIn</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
+    <nav aria-label="Legal"><a href="https://app.kithfold.ai" rel="noopener">Sign in</a><a href="https://www.linkedin.com/company/kithfold-ai" target="_blank" rel="noopener">LinkedIn</a><a href="open-fold/">Open Fold</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
     <p class="legal">© 2026 Kithfold AI Ltd. Registered in England and Wales, company no. 17482165. Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ.</p>
   </div>
 </footer>
