@@ -111,6 +111,7 @@ b, strong { font-weight: 600; }
 .mail button:disabled { opacity: .6; cursor: default; }
 .mail .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); }
 .mail .consent input { margin-top: 3px; accent-color: var(--plum); }
+.mail .consent a { color: var(--plum); }
 .mail .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .mail .msg { font-size: 14px; font-weight: 600; min-height: 1.2em; }
 .mail .msg.ok { color: var(--sage); }
@@ -202,10 +203,11 @@ b, strong { font-weight: 600; }
           <input type="email" id="m-email" name="email" autocomplete="email" placeholder="you@company.com" required maxlength="254" aria-label="Your email address">
           <button type="submit" id="m-send">Send my results</button>
         </div>
+        <label class="consent"><input type="checkbox" id="m-news" name="newsletter"> <span>Subscribe me to Kate's Substack, <a href="https://breathingkatedrama.substack.com" target="_blank" rel="noopener">Breathing Kate Drama</a>.</span></label>
         <label class="consent"><input type="checkbox" id="m-follow" name="follow"> <span>Kate from Kithfold can email me once about testing my product.</span></label>
         <div class="hp" aria-hidden="true"><label for="m-site">Leave this empty</label><input type="text" id="m-site" name="company_site" tabindex="-1" autocomplete="off"></div>
         <p class="msg" id="m-msg" role="status" aria-live="polite"></p>
-        <p class="fine">We use your email only to send these results, and to follow up once if you tick the box. See our <a href="../privacy/">privacy notice</a>.</p>
+        <p class="fine">We use your email only to send these results, and for anything you tick above. See our <a href="../privacy/">privacy notice</a>.</p>
       </form>
 
       <div class="cta">
@@ -342,13 +344,20 @@ b, strong { font-weight: 600; }
       body: JSON.stringify({
         email: email,
         follow_up: document.getElementById("m-follow").checked,
+        newsletter: document.getElementById("m-news").checked,
         company_site: document.getElementById("m-site").value,
         elapsed_ms: Date.now() - started,
         answers: { where: fd.getAll("where"), age: fd.getAll("age"), kind: fd.get("kind"), schools: fd.get("schools"), data: fd.get("data"), social: fd.get("social") }
       })
     }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (b) { return { ok: r.ok, b: b }; }); })
       .then(function (res) {
-        if (res.ok) { mmsg.className = "msg ok"; mmsg.textContent = "Sent. Check your inbox in a minute (and your spam folder, just in case)."; mailer.reset(); }
+        if (res.ok) {
+          var wanted = document.getElementById("m-news").checked;
+          mmsg.className = "msg ok";
+          mmsg.textContent = "Sent. Check your inbox in a minute (and your spam folder, just in case)." +
+            (wanted ? (res.b && res.b.subscribed ? " Your Substack welcome email is on its way too." : " We couldn't add you to the Substack automatically; you can subscribe at breathingkatedrama.substack.com.") : "");
+          mailer.reset();
+        }
         else { mmsg.className = "msg err"; mmsg.textContent = (res.b && res.b.message) || "That didn't go through. Please try again in a moment."; }
       })
       .catch(function () { mmsg.className = "msg err"; mmsg.textContent = "That didn't go through. Please try again in a moment."; })
