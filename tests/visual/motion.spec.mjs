@@ -52,8 +52,8 @@ for (const pg of PAGES) {
       .filter((a) => a.effect.getComputedTiming().iterations !== Infinity)
       .map((a) => a.finished.catch(() => {}))));
     const stuck = await page.evaluate(() =>
-      [...document.querySelectorAll(".rv, .reveal, [data-reveal], .finding")]
-        .filter((el) => !el.closest("[aria-hidden=true]") && !el.matches(".finding.hidden"))
+      [...document.querySelectorAll(".rv, .reveal, [data-reveal]")]
+        .filter((el) => !el.closest("[aria-hidden=true]"))
         .filter((el) => parseFloat(getComputedStyle(el).opacity) < 0.95)
         .map((el) => `<${el.tagName.toLowerCase()} .${String(el.className).split(" ").join(".")}> "${el.textContent.trim().slice(0, 40)}"`)
     );

@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://kithfold.ai/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: questions in a left column, live results in a wider right column; stacks on phones. Single light look by choice (Kithfold brand). */
 :root {
@@ -64,7 +64,7 @@ legend { font-family: var(--display); font-weight: 600; font-size: 15px; padding
 .summary h2 { font-family: var(--display); font-weight: 400; font-size: 22px; margin: 0; letter-spacing: -0.01em; }
 .counts { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
 .counts b { font-variant-numeric: tabular-nums; color: var(--plum); }
-.group-title { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin: 26px 0 10px; }
+.group-title { font-family: var(--mono); font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin: 26px 0 10px; }
 .group-title:first-of-type { margin-top: 0; }
 .cards { display: flex; flex-direction: column; gap: 12px; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; min-width: 0; }
@@ -94,6 +94,7 @@ legend { font-family: var(--display); font-weight: 600; font-size: 15px; padding
 .small { margin-top: 18px; font-size: 12.5px; color: var(--faint); max-width: 75ch; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
+b, strong { font-weight: 600; }
 .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .top a { text-decoration: none; }
 .back { font-size: 14px; color: var(--muted); }
