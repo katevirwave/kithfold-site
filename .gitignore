@@ -1,0 +1,3 @@
+tests/visual/node_modules/
+tests/visual/test-results/
+tests/visual/playwright-report/
