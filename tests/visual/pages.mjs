@@ -4,6 +4,7 @@ export const PAGES = [
   { path: "/open-fold/", name: "open-fold" },
   { path: "/privacy/", name: "privacy" },
   { path: "/terms/", name: "terms" },
+  { path: "/operators/", name: "operators" },
 ];
 
 // The brand type system. Anything else rendering means a fallback or a stray font.

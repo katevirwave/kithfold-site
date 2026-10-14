@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Kithfold AI · The release gate for AI that talks to children</title>
+<title>Kithfold AI · The trust standard for AI that talks to children</title>
 <meta name="description" content="Kithfold AI is the release gate for AI that talks to children: child-specific, multi-turn evaluations with transcript evidence and a decision you can defend.">
 <meta property="og:title" content="Kithfold AI">
 <meta property="og:site_name" content="Kithfold AI">
-<meta property="og:description" content="The release gate for AI that talks to children. Bringing humans back into the conversation.">
+<meta property="og:description" content="The trust standard for AI that talks to children. Tested, certified and watched, for builders and the networks that carry them.">
 <meta property="og:url" content="https://kithfold.ai/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://kithfold.ai/og-image.png">
@@ -22,17 +22,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    --ground:#F5F1EC; --ground-2:#ECE6E9; --card:#FFFFFF;
-    --ink:#3A2A45; --ink-2:#5A4668; --ink-3:#6B5F76; --line:#DDD5D9;
-    --heather:#B48EAD; --heather-deep:#7A5E86; --heather-tint:#F0E7EF;
-    --sage:#7FA58A; --sage-deep:#3f6e4d; --sage-tint:#E6EFE8;
+    --ground:#F8F5F1; --ground-2:#EFEAF0; --card:#FFFFFF;
+    --ink:#1F1430; --ink-2:#4B3D5B; --ink-3:#655873; --line:#E3DCE3;
+    --heather:#B48EAD; --heather-deep:#6E4C7E; --heather-tint:#F3EBF3;
+    --sage:#7FA58A; --sage-deep:#376747; --sage-tint:#E7F0E9;
     --ember:#A3432F; --ember-tint:#F6E3DE;
-    --shadow:0 1px 0 rgba(58,42,69,.04),0 12px 32px -20px rgba(58,42,69,.22);
+    --glow-a:#E9D8EC; --glow-b:#DCEBDF; --glow-c:#F4E3D6;
+    --shadow:0 1px 0 rgba(31,20,48,.04),0 24px 48px -28px rgba(31,20,48,.28);
     --serif:"Fraunces",Georgia,"Times New Roman",serif;
     --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --radius:16px; --max:1280px;
-    --shadow-card:0 1px 2px rgba(58,42,69,.04),0 6px 20px rgba(58,42,69,.06); --ring:0 0 0 1px rgba(58,42,69,.12);
+    --radius:16px; --max:1240px;
+    --shadow-card:0 1px 2px rgba(31,20,48,.04),0 10px 30px -12px rgba(31,20,48,.12); --ring:0 0 0 1px rgba(31,20,48,.08);
   }
   *,*::before,*::after{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -513,6 +514,107 @@
   .member-ic{width:40px;height:40px;border-radius:12px;background:var(--sage-tint);color:var(--sage-deep);display:grid;place-items:center;flex:none}
   .member-ic svg{width:22px;height:22px}
   .member .arrow{font-size:1.4rem;color:var(--sage-deep);flex:none}
+
+  /* ===== Rebrand, Oct 2026: confident, enterprise-grade, still light ===== */
+  body{font-size:17.5px}
+  h1{font-size:clamp(3rem,7.2vw,6.4rem);line-height:.93;letter-spacing:-.026em;font-weight:400}
+  h1 em,h2 em{font-style:italic;color:var(--heather-deep);font-weight:400}
+  h2{font-size:clamp(2.1rem,4.2vw,3.4rem);line-height:1.05;letter-spacing:-.012em;font-variation-settings:normal}
+  .eyebrow{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.14em;color:var(--heather-deep);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.6}
+  .btn{padding:13px 22px;transition:transform .2s cubic-bezier(.33,1,.68,1),background .2s ease,border-color .2s ease,box-shadow .2s ease}
+  .btn-primary{background:var(--ink);color:#FFFFFF;box-shadow:0 8px 20px -10px rgba(31,20,48,.55)}
+  .btn-primary:hover{background:var(--heather-deep);box-shadow:0 12px 26px -12px rgba(110,76,126,.7)}
+  .btn-ghost{background:rgba(255,255,255,.7);border-color:var(--line)}
+  .btn .arr{transition:transform .2s cubic-bezier(.33,1,.68,1)}
+  .btn:hover .arr{transform:translateX(3px)}
+  .nav .wrap{background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
+  .navlinks a{position:relative}
+  .navlinks a.new::after{content:"New";margin-left:6px;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;padding:2px 6px;border-radius:999px;background:var(--sage-tint);color:var(--sage-deep);vertical-align:2px}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding-block:clamp(56px,8vw,120px) clamp(48px,6vw,88px);margin-top:-82px;padding-top:calc(clamp(56px,8vw,120px) + 82px)}
+  .aurora{position:absolute;inset:-20% -10% auto -10%;height:140%;pointer-events:none;z-index:0;filter:blur(60px);opacity:.9}
+  .aurora i{position:absolute;border-radius:50%;display:block}
+  .aurora i:nth-child(1){width:46vw;height:46vw;left:-6vw;top:-8vw;background:var(--glow-a);animation:drift1 22s cubic-bezier(.45,0,.55,1) infinite alternate}
+  .aurora i:nth-child(2){width:40vw;height:40vw;right:-4vw;top:4vw;background:var(--glow-b);animation:drift2 26s cubic-bezier(.45,0,.55,1) infinite alternate}
+  .aurora i:nth-child(3){width:30vw;height:30vw;left:34vw;top:22vw;background:var(--glow-c);opacity:.7;animation:drift1 30s cubic-bezier(.45,0,.55,1) infinite alternate-reverse}
+  @keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,4vw) scale(1.12)}}
+  @keyframes drift2{from{transform:translate(0,0) scale(1.05)}to{transform:translate(-5vw,6vw) scale(.94)}}
+  .grain{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(31,20,48,.07) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 85%);mask-image:linear-gradient(to bottom,#000 0%,transparent 85%)}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{grid-template-columns:1.1fr .9fr}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(2.7rem,12vw,4rem)}}
+  .hero-copy{gap:26px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;justify-self:start;padding:6px 14px 6px 6px;border-radius:999px;background:rgba(255,255,255,.75);box-shadow:var(--ring);font-size:.86rem;color:var(--ink-2);text-decoration:none}
+  .kicker b{font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.08em;padding:4px 9px;border-radius:999px;background:var(--ink);color:#FFFFFF}
+  .kicker:hover{color:var(--ink)}
+  .lede-xl{font-size:clamp(1.12rem,1.5vw,1.32rem);color:var(--ink-2);max-width:32em;line-height:1.5}
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px;max-width:620px}
+  @media (max-width:560px){.doors{grid-template-columns:1fr}}
+  .door{display:grid;gap:2px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.72);box-shadow:var(--ring);text-decoration:none;transition:transform .2s cubic-bezier(.33,1,.68,1),box-shadow .2s ease,background .2s ease}
+  .door:hover{transform:translateY(-2px);background:#FFFFFF;box-shadow:var(--shadow-card),var(--ring)}
+  .door small{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .door b{font-weight:600;font-size:.95rem}
+  .panel.live{box-shadow:0 40px 80px -40px rgba(31,20,48,.35),var(--ring);border-radius:26px}
+
+  /* proof bar */
+  .proof{padding-block:0 clamp(40px,5vw,64px)}
+  .proof-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  @media (max-width:860px){.proof-row{grid-template-columns:1fr 1fr}}
+  .proof-row>div{padding:22px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
+  .proof-row>div:first-child{border-left:0;padding-left:0}
+  @media (max-width:860px){.proof-row>div:nth-child(3){border-left:0;padding-left:0}.proof-row>div:nth-child(n+3){border-top:1px solid var(--line)}}
+  .proof-row .n{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .proof-row .l{font-size:.86rem;color:var(--ink-2);line-height:1.4}
+
+  /* section heads get room */
+  .sec-head{gap:18px;margin-bottom:clamp(36px,5vw,64px)}
+  .sec-head .lede{max-width:40em}
+  .panel,.console,.probe,.mover,.step,.quote,.demo,.plan,.char-card{border-radius:24px}
+
+  /* networks */
+  .g-net{background:linear-gradient(180deg,var(--card) 0%,var(--ground) 100%)}
+  .net-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:center}
+  @media (max-width:960px){.net-grid{grid-template-columns:1fr}}
+  .net-copy{display:grid;gap:22px;align-content:start}
+  .net-points{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:0}
+  .net-points li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+  .net-points li:last-child{border-bottom:1px solid var(--line)}
+  .net-points .k{font-family:var(--mono);font-size:.74rem;color:var(--heather-deep);padding-top:4px}
+  .net-points b{display:block;font-weight:600;margin-bottom:2px}
+  .net-points span{font-size:.95rem;color:var(--ink-2)}
+  .net-art{background:var(--card);border-radius:28px;box-shadow:0 40px 80px -44px rgba(31,20,48,.35),var(--ring);padding:clamp(18px,2.4vw,28px);display:grid;gap:14px}
+  .net-head{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-3)}
+  .net-head .live-dot{display:inline-flex;align-items:center;gap:8px;color:var(--sage-deep)}
+  .net-head .live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sage-deep);animation:pulse 2.4s cubic-bezier(.45,0,.55,1) infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(55,103,71,.35)}50%{box-shadow:0 0 0 6px rgba(55,103,71,0)}}
+  .feed{display:grid;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .feed-row{display:grid;grid-template-columns:1.3fr 1fr auto;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid var(--line);font-size:.9rem}
+  .feed-row:first-child{border-top:0;background:var(--ground);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .feed-row .svc{font-weight:600}
+  .feed-row .svc small{display:block;font-weight:400;font-size:.78rem;color:var(--ink-3)}
+  .feed-row .m{font-family:var(--mono);font-size:.76rem;color:var(--ink-2);white-space:nowrap}.feed-row .m small{display:block;font-size:.7rem;color:var(--ink-3)}
+  .v-cert{background:var(--sage-tint);color:var(--sage-deep)}
+  .v-watch{background:var(--heather-tint);color:var(--heather-deep)}
+  @media (max-width:560px){.feed-row{grid-template-columns:1fr auto}.feed-row .m{display:none}}
+  .net-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;font-size:.82rem;color:var(--ink-2);text-align:center}
+  .net-flow div{padding:10px 8px;border-radius:12px;background:var(--ground);box-shadow:var(--ring)}
+  .net-flow div b{display:block;font-size:.88rem;color:var(--ink)}
+  .net-flow .ar{color:var(--heather-deep);font-size:1.1rem}
+  .net-flow div.k{background:var(--ink);color:#FFFFFF;box-shadow:none}
+  .net-flow div.k b{color:#FFFFFF}
+  .net-note{font-size:.8rem;color:var(--ink-3)}
+  @media (max-width:560px){.net-flow{grid-template-columns:1fr}.net-flow .ar{transform:rotate(90deg)}}
+
+  /* closing band: aurora, light */
+  .band{position:relative;overflow:hidden;background:var(--heather-tint)}
+  .band .aurora{opacity:.75;top:-30%}
+  .band .wrap{position:relative;z-index:1}
+  .close h2{font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:.95;letter-spacing:-.035em}
+  .giant{color:var(--ink);opacity:1}
+  @media (prefers-reduced-motion:reduce){.aurora i,.net-head .live-dot::before{animation:none!important}}
+  b,strong{font-weight:600}
 </style>
 </head>
 <body>
@@ -526,10 +628,10 @@
     <ul class="navlinks">
       <li><a href="#evidence">Evidence</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#shep">Meet Shep</a></li>
-      <li><a href="#why">Why now</a></li>
+      <li><a href="operators/" class="new">For networks</a></li>
+      <li><a href="#statement">Certification</a></li>
       <li><a href="laws/">Which laws apply?</a></li>
-      <li><a href="#keep">Programmes</a></li>
+      <li><a href="#keep">Enterprise</a></li>
     </ul>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="https://app.kithfold.ai" rel="noopener">Sign in</a>
@@ -540,16 +642,22 @@
 <div class="nav-spacer"></div>
 <main id="top">
   <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="grain" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <h1>The release gate for AI that talks to children.</h1>
-        <p class="tagline">Bringing humans back into the conversation.</p>
-        <p class="lede">We run your build as a child would. You ship with the evidence.</p>
+        <a class="kicker" href="operators/"><b>NEW</b>Kithfold for networks and platforms <span class="arr" aria-hidden="true">→</span></a>
+        <h1>The trust standard for AI that <em>talks to children.</em></h1>
+        <p class="lede-xl">We test every AI a child can talk to the way a child would, certify what passes, and keep watching after it ships. Builders release with evidence. Networks carry it with confidence.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Book a demo</a>
+          <a class="btn btn-primary" href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Book a demo <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#evidence">See the evidence</a>
         </div>
-        <p class="micro">Any model. Any build. Any product surface.</p>
+        <nav class="doors" aria-label="Where to start">
+          <a class="door" href="#how"><small>For builders</small><b>The release gate</b></a>
+          <a class="door" href="operators/"><small>For networks</small><b>The tested-AI feed</b></a>
+          <a class="door" href="#statement"><small>For parents</small><b>The seal on the box</b></a>
+        </nav>
       </div>
       <figure class="panel live" aria-label="A Kithfold release run, replayed">
         <div class="panel-bar"><span class="dots"><i></i><i></i><i></i></span><span id="pk-title"><b>pack</b> secrecy · age 5 · UK</span><span id="pk-turn">turn 1 of 6</span></div>
@@ -568,6 +676,17 @@
         </div>
         <div class="panel-foot"><span id="pk-progress"><i></i><i></i><i></i></span><span class="micro">Secrecy pack: verbatim, run 2026-07-23, on a Kithfold test persona built on a frontier model. Not a customer product. Other packs: illustrative until published.</span></div>
       </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Kithfold at a glance">
+    <div class="wrap">
+      <div class="proof-row">
+        <div><span class="n">Any surface</span><span class="l">apps, AI toys, speakers, watches and in-car assistants</span></div>
+        <div><span class="n">Every turn</span><span class="l">judged as a whole conversation, signed by a person</span></div>
+        <div><span class="n">7 frameworks</span><span class="l">mapped by clause: AADC, OSA, EU AI Act, COPPA and more</span></div>
+        <div><span class="n">OSTIA</span><span class="l">Full Member, Online Safety Tech Industry Association</span></div>
+      </div>
     </div>
   </section>
 
@@ -644,6 +763,38 @@
           <div class="summary"><div><b>Hold</b>release decision</div><div><b>3</b>findings, adjudicated</div><div><b>AADC · KCSIE</b>clauses mapped</div></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="networks" class="g-net">
+    <div class="wrap net-grid">
+      <div class="net-copy">
+        <span class="eyebrow">For networks and platforms</span>
+        <h2>Your network carries AI to millions of children. <em>Know which of it is safe.</em></h2>
+        <p class="lede">Kithfold turns release testing into a live feed: every AI service a child can reach on your network, tested by age band and market, re-tested when the model or the build changes.</p>
+        <ul class="net-points">
+          <li><span class="k">01</span><div><b>One feed for family plans and routers</b><span>A status your parental controls can act on: certified, under watch, or held.</span></div></li>
+          <li><span class="k">02</span><div><b>Evidence you can hand a regulator</b><span>Transcripts, findings and the clause each one maps to, dated.</span></div></li>
+          <li><span class="k">03</span><div><b>Your own assistants, certified</b><span>Put the Kithfold seal on the AI your brand puts in front of kids.</span></div></li>
+        </ul>
+        <div class="cta-row"><a class="btn btn-primary" href="operators/">Kithfold for networks <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+      <figure class="net-art" role="img" aria-label="An illustrative Kithfold registry feed for a network: AI services with their tested status by age band and market">
+        <div class="net-head"><span>kithfold registry · family plan feed</span><span class="live-dot">re-tested on every release</span></div>
+        <div class="feed">
+          <div class="feed-row"><span>Service</span><span class="m">Scope · last trigger</span><span>Status</span></div>
+          <div class="feed-row"><span class="svc">Homework tutor<small>education · chat</small></span><span class="m">ages 8–12 · UK<small>model update</small></span><span class="verdict v-cert">CERTIFIED</span></div>
+          <div class="feed-row"><span class="svc">Story companion<small>entertainment · voice</small></span><span class="m">ages 3–7 · UK<small>build 2.4.1</small></span><span class="verdict v-fail">HELD</span></div>
+          <div class="feed-row"><span class="svc">Game sidekick<small>games · chat</small></span><span class="m">ages 9–13 · EU<small>new persona</small></span><span class="verdict v-watch">UNDER WATCH</span></div>
+          <div class="feed-row"><span class="svc">Wellbeing check-in<small>health · chat</small></span><span class="m">ages 13–17 · UK<small>quarterly</small></span><span class="verdict v-cert">CERTIFIED</span></div>
+        </div>
+        <div class="net-flow" aria-hidden="true">
+          <div><b>AI services</b>apps, toys, assistants</div><span class="ar">→</span>
+          <div class="k"><b>Kithfold</b>test · certify · watch</div><span class="ar">→</span>
+          <div><b>Your network</b>family plans, routers</div>
+        </div>
+        <figcaption class="net-note">Illustrative services and statuses. The registry is in design now. Networks that join early shape what it covers.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -945,6 +1096,7 @@
 
 
   <section class="band">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
       <div class="close">
         <h2>Someone has to bring humanity back into the conversation.</h2>
@@ -959,7 +1111,7 @@
   <div class="wrap">
     <div><svg viewBox="220 170 820 840" class="mark" aria-hidden="true"><path d="M627 300 V420" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><circle cx="627" cy="250" r="55" fill="var(--sage)"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="var(--sage)" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><circle cx="525" cy="672" r="40" fill="currentColor"/><circle cx="730" cy="672" r="40" fill="currentColor"/><path d="M572 738 Q627 785 682 738" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg><span class="motto">Evidence. Judgement. Release.</span></div>
     <span class="email">kate@kithfold.ai</span>
-    <nav aria-label="Legal"><a href="https://app.kithfold.ai" rel="noopener">Sign in</a><a href="https://www.linkedin.com/company/kithfold-ai" target="_blank" rel="noopener">LinkedIn</a><a href="open-fold/">Open Fold</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
+    <nav aria-label="Legal"><a href="https://app.kithfold.ai" rel="noopener">Sign in</a><a href="https://www.linkedin.com/company/kithfold-ai" target="_blank" rel="noopener">LinkedIn</a><a href="operators/">For networks</a><a href="open-fold/">Open Fold</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
     <p class="legal">© 2026 Kithfold AI Ltd. Registered in England and Wales, company no. 17482165. Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ. Full Member of the <a href="https://www.ostia.org.uk/members/directory/" target="_blank" rel="noopener">Online Safety Tech Industry Association</a>.</p>
   </div>
 </footer>
