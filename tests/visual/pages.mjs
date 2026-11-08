@@ -2,6 +2,7 @@ export const PAGES = [
   { path: "/", name: "home" },
   { path: "/laws/", name: "laws" },
   { path: "/open-fold/", name: "open-fold" },
+  { path: "/workshop/", name: "workshop" },
   { path: "/privacy/", name: "privacy" },
   { path: "/terms/", name: "terms" },
   { path: "/operators/", name: "operators" },

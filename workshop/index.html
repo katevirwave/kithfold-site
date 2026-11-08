@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kids, AI and You · Kithfold AI</title>
+<meta name="description" content="A free 45-minute session for parents, carers, schools and community groups on how children use AI chatbots, where it goes wrong and what to do tonight. Led by Kate Julia, founder of Kithfold AI.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kithfold.ai/workshop/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Kids, AI and You · Kithfold AI">
+<meta property="og:description" content="A free 45-minute session for parents, schools and communities on children and AI chatbots.">
+<meta property="og:image" content="https://kithfold.ai/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Single light look by choice (Kithfold brand), matching kithfold.ai and /laws. */
+:root {
+  color-scheme: light;
+  --oat: #F8F5F1;
+  --panel: #FFFFFF;
+  --plum: #1F1430;
+  --muted: #4B3D5B;
+  --faint: #655873;
+  --line: #E3DCE3;
+  --heather: #6E4C7E;
+  --heather-soft: #F3EBF3;
+  --sage: #7FA58A;
+  --sage-deep: #376747;
+  --sage-soft: #E7F0E9;
+  --ember-tint: #F6E3DE;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--oat); color: var(--plum); font-family: var(--body); font-size: 16px; line-height: 1.55; padding: 0 16px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 56px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.top a { text-decoration: none; }
+.brand { font-family: var(--body); font-weight: 600; font-size: 18px; color: var(--plum); }
+.brand span { color: var(--faint); font-weight: 400; }
+.back { font-size: 14px; color: var(--muted); }
+.eyebrow { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage-deep); }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 32px; align-items: center; margin-top: 32px; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .clover { max-width: 200px; } }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; letter-spacing: -0.02em; margin: 12px 0 14px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 60ch; margin: 0; font-size: 17px; }
+.clover { background: var(--sage-soft); border-radius: 28px; aspect-ratio: 1/1; display: grid; place-items: center; width: 100%; }
+.clover svg { width: 68%; height: auto; color: var(--plum); overflow: visible; }
+.say { margin: 12px 0 0; font-family: var(--display); font-style: italic; font-size: 17px; text-align: center; }
+
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.card h2 { font-family: var(--display); font-weight: 400; font-size: 20px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.card ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.card li { margin: 4px 0; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 40px 0 0; padding: 0; list-style: none; counter-reset: s; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+.steps li { counter-increment: s; display: grid; gap: 4px; }
+.steps li::before { content: counter(s); font-family: var(--display); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--sage-soft); color: var(--sage-deep); margin-bottom: 6px; }
+.steps b { font-weight: 600; }
+.steps span { font-size: 14px; color: var(--muted); }
+.rule { margin-top: 28px; font-family: var(--display); font-style: italic; font-size: 20px; color: var(--heather); }
+
+form { margin-top: 44px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 18px; }
+form h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0; letter-spacing: -0.01em; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+label, legend { font-weight: 600; font-size: 14px; display: block; margin-bottom: 6px; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+input[type=text], input[type=email], input[type=url], select, textarea { width: 100%; font: inherit; color: var(--plum); background: var(--oat); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; min-height: 46px; }
+textarea { min-height: 110px; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--heather); outline-offset: 1px; background: var(--panel); }
+.hint { color: var(--faint); font-size: 13px; margin: -2px 0 6px; font-weight: 400; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { position: relative; margin: 0; font-weight: 400; }
+.opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.opt span { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; background: var(--panel); transition: background .15s, border-color .15s; }
+.opt input:checked + span { background: var(--sage-soft); border-color: var(--sage-deep); font-weight: 500; }
+.opt input:checked + span::before { content: "✓"; margin-right: 6px; color: var(--sage-deep); font-weight: 600; }
+.opt input:focus-visible + span { outline: 2px solid var(--heather); outline-offset: 2px; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; color: var(--muted); }
+.check input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--sage-deep); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+button { font: inherit; font-weight: 600; font-size: 15px; border: 0; border-radius: 999px; padding: 13px 24px; background: var(--plum); color: var(--oat); cursor: pointer; min-height: 48px; }
+button:hover { background: var(--heather); }
+button:focus-visible { outline: 2px solid var(--heather); outline-offset: 3px; }
+.note { font-size: 13px; color: var(--faint); margin: 0; }
+.status { display: none; padding: 14px 16px; border-radius: 12px; background: var(--sage-soft); color: var(--sage-deep); font-size: 14px; }
+.status.show { display: block; }
+.small { margin-top: 18px; font-size: 12.5px; color: var(--faint); max-width: 75ch; }
+.small a { color: var(--heather); text-underline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.mascot { background: var(--sage-soft); border-radius: 28px; aspect-ratio: 1/1; display: grid; place-items: center; width: 100%; }
+.mascot svg { width: 64%; height: auto; color: var(--plum); }
+@media (max-width: 760px) { .mascot { max-width: 200px; } }
+.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 40px; }
+@media (max-width: 640px) { .facts { grid-template-columns: 1fr; } }
+.fact { background: var(--heather-soft); border-radius: 14px; padding: 18px 20px; }
+.fact b { display: block; font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1.1; color: var(--heather); }
+.fact span { color: var(--muted); }
+.fact cite { display: block; margin-top: 6px; font-style: normal; font-size: 12.5px; color: var(--faint); }
+.agenda { margin-top: 40px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: clamp(20px, 3vw, 32px); }
+.agenda h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
+.agenda ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.agenda li { display: grid; grid-template-columns: 88px 1fr; gap: 14px; align-items: baseline; }
+.agenda .t { font-family: var(--mono); font-size: 13px; color: var(--sage-deep); }
+.agenda li b { display: block; }
+.agenda li span { color: var(--muted); font-size: 15px; }
+.sid { margin-top: 40px; display: flex; gap: 16px; align-items: center; background: var(--sage-soft); border-radius: 14px; padding: 18px 20px; }
+.sid b { font-family: var(--display); font-weight: 400; font-size: 20px; }
+.sid p { margin: 2px 0 0; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="../">Kithfold<span>.ai</span></a><a class="back" href="../">← Back to kithfold.ai</a></div>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Kids, AI and You · A 45-minute session</span>
+      <h1>Your child is already talking to AI. Here's what to know.</h1>
+      <p class="lede">A free session for parents, carers, schools and community groups. We cover how children really use AI chatbots, where those conversations go wrong, and what you can do tonight. Led by Kate Julia, founder of Kithfold AI and two-time TEDx speaker.</p>
+    </div>
+    <div>
+      <div class="mascot"><svg role="img" aria-label="Shep, the Kithfold character, smiling" viewBox="220 170 820 840"><path d="M627 300 V420" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><circle cx="627" cy="250" r="55" fill="#7FA58A"/><path d="M430 415 H822 L1005 600 V820 A150 150 0 0 1 855 970 H400 A150 150 0 0 1 250 820 V600 Z" fill="#F1E9F3" stroke="currentColor" stroke-width="18" stroke-linejoin="round"/><path d="M430 415 V520 A24 24 0 0 1 418 541 L250 612 V600 Z" fill="#7FA58A" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><path d="M822 415 V520 A24 24 0 0 0 834 541 L1005 612 V600 Z" fill="#7FA58A" stroke="currentColor" stroke-width="16" stroke-linejoin="round"/><circle cx="525" cy="672" r="40" fill="currentColor"/><circle cx="730" cy="672" r="40" fill="currentColor"/><path d="M572 738 Q627 785 682 738" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></div>
+      <p class="say">“Bring your questions. All of them.”</p>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><b>64%</b><span>of UK children aged 9 to 17 use AI chatbots.</span><cite>Internet Matters, Me, Myself and AI, July 2025</cite></div>
+    <div class="fact"><b>1 in 3</b><span>children aged 11 to 16 have told a chatbot something they wouldn't tell their parents, teachers or friends.</span><cite>Censuswide for VodafoneThree and Childline, January 2026</cite></div>
+  </div>
+
+  <div class="agenda">
+    <h2>What happens in the 45 minutes</h2>
+    <ol>
+      <li><span class="t">0–5 min</span><div><b>Why this matters now</b><span>What changed when chatbots started talking back, and why the usual parental controls miss it.</span></div></li>
+      <li><span class="t">5–15 min</span><div><b>What children are really doing with AI</b><span>Homework helpers, chat companions, talking toys and voice assistants, and what keeps them coming back.</span></div></li>
+      <li><span class="t">15–25 min</span><div><b>Where it goes wrong</b><span>Keeping secrets, “I'm your best friend”, long chats that drift, and questions about personal details. Real examples, explained plainly.</span></div></li>
+      <li><span class="t">25–35 min</span><div><b>What you can do tonight</b><span>How to start the conversation, the settings worth checking, signs to look for, and where to go for help.</span></div></li>
+      <li><span class="t">35–45 min</span><div><b>Your questions</b><span>Anything you've wondered about. Everyone leaves with a one-page guide to take home.</span></div></li>
+    </ol>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h2>Who it's for</h2>
+      <ul>
+        <li>Parents and carers</li>
+        <li>School staff and safeguarding leads</li>
+        <li>Youth, faith and community leaders</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Where we run it</h2>
+      <ul>
+        <li>Schools, PTAs and parents' evenings</li>
+        <li>Councils, libraries and family hubs</li>
+        <li>Community centres, clubs and parent groups</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>What you need</h2>
+      <ul>
+        <li>A room and a screen, or a video link</li>
+        <li>Around 45 minutes</li>
+        <li>An audience of any size</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sid">
+    <div><b>Booking now for Safer Internet Day week</b><p>Safer Internet Day is Tuesday 9 February 2027. Sessions in January and February are filling first.</p></div>
+  </div>
+
+  <form id="book" novalidate>
+    <h2>Book a session</h2>
+    <div class="row">
+      <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+      <div><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+    </div>
+    <div class="row">
+      <div><label for="f-org">School or organisation</label><input type="text" id="f-org" name="organisation" autocomplete="organization" required></div>
+      <div><label for="f-place">Town or borough</label><input type="text" id="f-place" name="place" placeholder="For example Camden" required></div>
+    </div>
+    <fieldset>
+      <legend>Which best describes you?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="type" value="School or PTA" checked><span>School or PTA</span></label>
+        <label class="opt"><input type="radio" name="type" value="Council, library or family hub"><span>Council, library or family hub</span></label>
+        <label class="opt"><input type="radio" name="type" value="Community, faith or youth group"><span>Community, faith or youth group</span></label>
+        <label class="opt"><input type="radio" name="type" value="Parent support group"><span>Parent support group</span></label>
+        <label class="opt"><input type="radio" name="type" value="Employer parent network"><span>Employer parent network</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Who will be there?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="audience" value="Parents and carers" checked><span>Parents and carers</span></label>
+        <label class="opt"><input type="radio" name="audience" value="Staff and professionals"><span>Staff and professionals</span></label>
+        <label class="opt"><input type="radio" name="audience" value="Both"><span>Both</span></label>
+      </div>
+    </fieldset>
+    <div class="row">
+      <div>
+        <label for="f-when">When would suit you?</label>
+        <select id="f-when" name="when">
+          <option>Safer Internet Day week (8 to 12 February 2027)</option>
+          <option>January 2027</option>
+          <option>Later in February or March 2027</option>
+          <option>Flexible</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-format">Format</label>
+        <select id="f-format" name="format">
+          <option>In person</option>
+          <option>Online</option>
+          <option>Either</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label for="f-size">Roughly how many people?</label>
+      <input type="text" id="f-size" name="size" placeholder="For example 40">
+    </div>
+    <div>
+      <label for="f-q">What do your parents or staff most want to know?</label>
+      <p class="hint">Optional. Questions people have already asked help us shape the session.</p>
+      <textarea id="f-q" name="questions"></textarea>
+    </div>
+    <div class="actions">
+      <button type="submit">Send booking request</button>
+      <p class="note">This opens your email app with your answers filled in, addressed to kate@kithfold.ai.</p>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="small">Sessions are free for schools, councils, libraries and community groups. Employer parent networks, please get in touch about a session for your staff. The session gives general information about children and AI. It isn't a safeguarding assessment, and it never replaces your school's or local authority's own procedures. If you're worried about a child right now, contact your designated safeguarding lead or the NSPCC.</p>
+</div>
+<script>
+(function(){
+  var form = document.getElementById('book'), status = document.getElementById('status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var need = ['f-name','f-email','f-org','f-place'];
+    for (var i = 0; i < need.length; i++) {
+      var el = document.getElementById(need[i]);
+      if (!el.value.trim()) { el.focus(); status.textContent = 'Please fill in ' + el.labels[0].textContent.toLowerCase() + '.'; status.className = 'status show'; return; }
+    }
+    var d = new FormData(form);
+    var lines = [
+      'Name: ' + d.get('name'),
+      'Email: ' + d.get('email'),
+      'Organisation: ' + d.get('organisation'),
+      'Town or borough: ' + d.get('place'),
+      'Type: ' + d.get('type'),
+      'Audience: ' + d.get('audience'),
+      'When: ' + d.get('when'),
+      'Format: ' + d.get('format'),
+      'Size: ' + (d.get('size') || '-'),
+      '',
+      'What people want to know:',
+      d.get('questions') || '-'
+    ];
+    var href = 'mailto:kate@kithfold.ai?subject=' + encodeURIComponent('Kids, AI and You session: ' + d.get('organisation')) + '&body=' + encodeURIComponent(lines.join('\n'));
+    status.textContent = 'Your email app should open with your request ready to send. If it doesn\'t, email kate@kithfold.ai.';
+    status.className = 'status show';
+    window.location.href = href;
+  });
+})();
+</script>
+</body>
+</html>
