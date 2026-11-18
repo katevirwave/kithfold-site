@@ -615,6 +615,24 @@
   .giant{color:var(--ink);opacity:1}
   @media (prefers-reduced-motion:reduce){.aurora i,.net-head .live-dot::before{animation:none!important}}
   b,strong{font-weight:600}
+
+  /* Podcast waitlist card (hero) */
+  .pod-card{display:grid;gap:14px;width:100%;max-width:600px;background:var(--card);border-radius:22px;box-shadow:var(--shadow),var(--ring);padding:18px 18px 14px;border-top:4px solid var(--sage)}
+  .pod-card-head{display:flex;gap:14px;align-items:flex-start}
+  .pod-card-head b{display:block;font-family:var(--serif);font-weight:500;font-size:1.3rem;line-height:1.15}
+  .pod-card-head span:not(.pod-mic){display:block;color:var(--ink-2);font-size:.94rem;margin-top:2px}
+  .pod-mic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--sage-tint);color:var(--sage-deep);display:grid;place-items:center}
+  .pod-mic svg{width:22px;height:22px}
+  .pod-row{display:flex;flex-wrap:wrap;gap:10px}
+  .pod-row input{flex:1 1 220px;min-width:0;font:inherit;font-size:1rem;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:12px 18px}
+  .pod-row input:focus{outline:2px solid var(--sage-deep);outline-offset:2px}
+  .pod-row button{border:0;cursor:pointer;font-family:inherit}
+  .pod-row button[disabled]{opacity:.6;cursor:default}
+  .wl-msg{font-size:.9rem;min-height:1.1em;margin:0}
+  .wl-msg:empty{display:none}
+  .wl-msg.ok{color:var(--sage-deep);font-weight:600}
+  .wl-msg.err{color:var(--ember)}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -628,10 +646,11 @@
     <ul class="navlinks">
       <li><a href="#evidence">Evidence</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="operators/" class="new">For networks</a></li>
+      <li><a href="operators/">For networks</a></li>
       <li><a href="#statement">Certification</a></li>
       <li><a href="laws/">Which laws apply?</a></li>
       <li><a href="#keep">Enterprise</a></li>
+      <li><a href="podcast/" class="new">Podcast</a></li>
     </ul>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="https://app.kithfold.ai" rel="noopener">Sign in</a>
@@ -646,11 +665,23 @@
     <div class="grain" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <a class="kicker" href="operators/"><b>NEW</b>Kithfold for networks and platforms <span class="arr" aria-hidden="true">→</span></a>
+        <a class="kicker" href="podcast/"><b>NEW PODCAST</b>What's Talking to Your Kids? Launching 9 Feb <span class="arr" aria-hidden="true">→</span></a>
         <h1>The trust standard for AI that <em>talks to children.</em></h1>
         <p class="lede-xl">We test every AI a child can talk to the way a child would, certify what passes, and keep watching after it ships. Builders release with evidence. Networks carry it with confidence.</p>
+        <form class="pod-card" data-waitlist novalidate aria-labelledby="pod-card-title">
+          <div class="pod-card-head">
+            <span class="pod-mic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+            <div><b id="pod-card-title">What's Talking to Your Kids?</b><span>Our new podcast on children and AI. Launching 9 February 2027, Safer Internet Day.</span></div>
+          </div>
+          <div class="pod-row">
+            <label class="vh" for="pod-email">Email</label>
+            <input type="email" id="pod-email" name="email" placeholder="you@example.com" autocomplete="email" required maxlength="254">
+            <button class="btn btn-primary" type="submit">Join the waitlist <span class="arr" aria-hidden="true">→</span></button>
+          </div>
+          <p class="wl-msg" role="status" aria-live="polite"></p>
+        </form>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Book a demo <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="https://calendar.app.google/vk5o1BKEx7kGWXPp8" target="_blank" rel="noopener">Book a demo <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#evidence">See the evidence</a>
         </div>
         <nav class="doors" aria-label="Where to start">
@@ -1174,5 +1205,25 @@
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.3});
   els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){
+  var ACTION="https://docs.google.com/forms/d/e/1FAIpQLSeiz9UWLzlRzrQAyCZBP10AroA32EcHqmf9GdicrKpI4-BT9w/formResponse";
+  document.querySelectorAll("form[data-waitlist]").forEach(function(f){
+    var msg=f.querySelector(".wl-msg"), btn=f.querySelector("button[type=submit]"), label=btn.innerHTML;
+    f.addEventListener("submit",function(e){
+      e.preventDefault();
+      var email=(f.querySelector("input[type=email]").value||"").trim();
+      msg.className="wl-msg"; msg.textContent="";
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.className="wl-msg err";msg.textContent="Please enter a valid email address.";return;}
+      btn.disabled=true; btn.textContent="Joining\u2026";
+      var body=new URLSearchParams(); body.append("entry.502304956",email); body.append("entry.242844810","homepage");
+      fetch(ACTION,{method:"POST",mode:"no-cors",body:body})
+        .then(function(){msg.className="wl-msg ok";msg.textContent="You're on the list. We'll email you when the first episode is out on 9 February.";f.reset();})
+        .catch(function(){msg.className="wl-msg err";msg.textContent="That didn't go through. Please try again in a moment.";})
+        .then(function(){btn.disabled=false;btn.innerHTML=label;});
+    });
+  });
 })();
 </script>
